@@ -1,0 +1,1177 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CGTMSE | Credit Guarantee Fund Trust for Micro and Small Enterprises</title>
+<link rel="icon" href="assets/logo.png">
+<meta name="description" content="Credit Guarantee Fund Trust for Micro and Small Enterprises (CGTMSE) — credit guarantee cover for collateral-free loans extended by Member Lending Institutions to eligible micro and small enterprises in India.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,500&family=Mukta:wght@400;500;600;700&family=Noto+Serif+Devanagari:wght@500;600&display=swap">
+<style>
+/* Layout concept: institutional broadsheet — navy masthead and hero, white reading bands on a cool-grey ground,
+   gold used only as a thin "seal" accent; serif for statements, Mukta (Latin + Devanagari) for everything read. */
+:root{
+  --navy:#102C50; --navy-2:#173F68; --navy-ink:#0B213D;
+  --white:#FFFFFF; --ground:#F4F7FA; --line:#DCE3EB; --line-dark:rgba(255,255,255,.14);
+  --gold:#C6A15B; --gold-soft:#E9DCC0; --saffron:#E99B35;
+  --text:#263445; --muted:#687789; --on-navy:#E6EDF5; --on-navy-muted:#A9B9CC;
+  --font-display:"Source Serif 4","Noto Serif Devanagari",Georgia,"Times New Roman",serif;
+  --font-body:"Mukta","Noto Sans Devanagari",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --fs-base:17px;
+  --radius:6px;
+  --shadow:0 1px 2px rgba(16,44,80,.06),0 8px 24px -12px rgba(16,44,80,.18);
+  --wrap:1240px;
+  color-scheme:light;
+}
+:root.hc{ --muted:#33475E; --line:#8C9BAD; --on-navy-muted:#E6EDF5; --gold:#F2C46B; }
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:var(--fs-base);-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--ground);color:var(--text);font-family:var(--font-body);font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--navy)}
+img{max-width:100%;display:block}
+section[id]{scroll-margin-top:110px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:2px;border-radius:2px}
+h1,h2,h3{font-family:var(--font-display);font-weight:600;color:var(--navy);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h2{font-size:clamp(1.75rem,1.2rem + 2vw,2.6rem);line-height:1.15}
+h3{font-size:1.2rem;line-height:1.3}
+p{margin:0}
+.wrap{max-width:var(--wrap);margin-inline:auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--saffron);color:var(--navy-ink);padding:8px 14px;font-weight:600;border-radius:4px;text-decoration:none}
+.skip:focus{top:calc(8px + env(safe-area-inset-top,0px))}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--navy-2);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:22px;height:2px;background:var(--gold)}
+.on-navy .eyebrow{color:var(--gold-soft)}
+.lede{color:var(--muted);font-size:1.08rem;max-width:62ch}
+.section{padding-block:clamp(64px,8vw,104px)}
+.section-head{display:grid;gap:14px;margin-bottom:clamp(32px,4vw,52px)}
+.section-head.split{grid-template-columns:1fr auto;align-items:end;gap:24px}
+@media (max-width:760px){.section-head.split{grid-template-columns:1fr}}
+.icon{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:4px;font-family:var(--font-body);font-weight:600;font-size:1rem;text-decoration:none;border:1.5px solid transparent;cursor:pointer;transition:background .2s,color .2s,border-color .2s,transform .2s}
+.btn .icon{transition:transform .2s}
+.btn:hover .icon{transform:translateX(3px)}
+.btn-gold{background:var(--gold);color:var(--navy-ink)}
+.btn-gold:hover{background:#D4B26F}
+.btn-ghost{border-color:rgba(255,255,255,.45);color:var(--white);background:transparent}
+.btn-ghost:hover{background:rgba(255,255,255,.08);border-color:var(--white)}
+.btn-navy{background:var(--navy);color:var(--white)}
+.btn-navy:hover{background:var(--navy-2)}
+.btn-line{border-color:var(--navy);color:var(--navy);background:transparent}
+.btn-line:hover{background:var(--navy);color:var(--white)}
+.textlink{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:var(--navy-2);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s,gap .2s}
+.textlink:hover{border-color:currentColor;gap:10px}
+.textlink .icon{width:16px;height:16px}
+
+/* 1. Government bar */
+.govbar{background:var(--navy-ink);color:var(--on-navy-muted);font-size:.8rem}
+.govbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:38px;flex-wrap:wrap;padding-block:4px}
+.gov-id{display:flex;align-items:center;gap:10px;color:var(--on-navy)}
+.gov-id .flag{width:22px;height:14px;border-radius:1px;background:linear-gradient(#FF9933 0 33.3%,#fff 33.3% 66.6%,#138808 66.6%);flex:none}
+.gov-tools{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
+.gov-tools a,.gov-tools button{color:var(--on-navy-muted);text-decoration:none;background:none;border:0;font:inherit;padding:6px 8px;cursor:pointer;border-radius:3px;min-height:32px}
+.gov-tools a:hover,.gov-tools button:hover,.gov-tools button[aria-pressed="true"]{color:var(--white);background:rgba(255,255,255,.08)}
+.gov-sep{width:1px;height:16px;background:var(--line-dark);margin-inline:6px}
+.gov-links{display:flex;gap:2px}
+@media (min-width:981px){.govbar .wrap{flex-wrap:nowrap}.gov-tools{flex-wrap:nowrap;white-space:nowrap}}
+@media (max-width:980px){.gov-links,.gov-sep.l,.gov-tools>a[href="#main"]{display:none}}
+@media (max-width:560px){.gov-id .full{display:none}}
+
+/* 2. Header */
+.header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--white);border-bottom:1px solid var(--line);transition:box-shadow .25s}
+.header.scrolled{box-shadow:0 10px 30px -18px rgba(16,44,80,.45)}
+.brandrow .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;min-width:0}
+.brand img{width:56px;height:56px;flex:none}
+.brand-name{display:grid;line-height:1.2;min-width:0}
+.brand-name strong{font-family:var(--font-display);font-weight:700;font-size:1.35rem;color:var(--navy);letter-spacing:.02em}
+.brand-name span{font-size:.86rem;color:var(--muted)}
+.header-actions{display:flex;align-items:center;gap:10px}
+.iconbtn{width:44px;height:44px;display:grid;place-items:center;border-radius:4px;border:1px solid var(--line);background:var(--white);color:var(--navy);cursor:pointer}
+.iconbtn:hover{border-color:var(--navy)}
+.tollfree{display:grid;text-align:right;line-height:1.2;margin-right:8px}
+.tollfree small{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.tollfree b{font-family:var(--font-display);color:var(--navy);font-size:1.05rem;font-variant-numeric:tabular-nums}
+.login{position:relative}
+.login .btn{min-height:44px}
+.menu-panel{position:absolute;right:0;top:calc(100% + 8px);background:var(--white);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow);min-width:290px;padding:8px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s;z-index:5}
+.open>.menu-panel{opacity:1;visibility:visible;transform:none}
+.menu-panel a{display:block;padding:10px 12px;border-radius:4px;text-decoration:none;color:var(--text);font-size:.95rem;line-height:1.35}
+.menu-panel a:hover,.menu-panel a:focus-visible{background:var(--ground);color:var(--navy)}
+.menu-panel a small{display:block;color:var(--muted);font-size:.8rem}
+.menu-panel .label{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:8px 12px 4px;font-weight:600}
+.burger{display:none}
+@media (max-width:1180px){.tollfree{display:none}}
+@media (max-width:1060px){.burger{display:grid}.mainnav{display:none}.login .btn span{display:none}.login .btn{padding:0 12px}}
+@media (max-width:560px){.brand img{width:44px;height:44px}.brand-name strong{font-size:1.15rem}.brand-name span{display:none}.login{display:none}}
+
+.mainnav{border-top:1px solid var(--line)}
+.mainnav ul{list-style:none;margin:0;padding:0;display:flex;gap:2px}
+.mainnav>.wrap>ul>li{position:relative}
+.navlink{display:flex;align-items:center;gap:4px;padding:0 12px;min-height:46px;font-weight:500;font-size:.95rem;color:var(--text);text-decoration:none;background:none;border:0;font-family:inherit;cursor:pointer;position:relative;white-space:nowrap}
+.navlink::after{content:"";position:absolute;left:12px;right:12px;bottom:0;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .2s}
+.navlink:hover,.navlink[aria-expanded="true"],.navlink.current{color:var(--navy)}
+.navlink:hover::after,.navlink[aria-expanded="true"]::after,.navlink.current::after{transform:scaleX(1)}
+.navlink .icon{width:14px;height:14px;transition:transform .2s}
+.navlink[aria-expanded="true"] .icon{transform:rotate(180deg)}
+.mainnav .menu-panel{left:0;right:auto;top:100%;min-width:280px}
+.mainnav li:nth-last-child(-n+3) .menu-panel{left:auto;right:0}
+
+/* Mobile drawer */
+.drawer{position:fixed;inset:0;z-index:80;display:none}
+.drawer.open{display:block}
+.drawer-scrim{position:absolute;inset:0;background:rgba(11,33,61,.55)}
+.drawer-panel{position:absolute;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--white);overflow-y:auto;padding:calc(14px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) calc(24px + env(safe-area-inset-bottom,0px)) 20px;animation:slidein .25s ease-out}
+@keyframes slidein{from{transform:translateX(30px);opacity:.4}}
+.drawer-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.drawer details{border-bottom:1px solid var(--line)}
+.drawer summary,.drawer .dlink{display:flex;justify-content:space-between;align-items:center;min-height:52px;font-weight:600;color:var(--navy);text-decoration:none;cursor:pointer;list-style:none;font-size:1.05rem}
+.drawer summary::-webkit-details-marker{display:none}
+.drawer details[open] summary .icon{transform:rotate(180deg)}
+.drawer details a{display:block;padding:10px 12px;color:var(--text);text-decoration:none;border-left:2px solid var(--line);margin-left:2px}
+.drawer details a:hover{border-color:var(--gold);color:var(--navy)}
+.drawer details div{padding-bottom:12px}
+.drawer .dlink{border-bottom:1px solid var(--line)}
+.drawer-cta{display:grid;gap:10px;margin-top:20px}
+
+/* Ticker */
+.ticker{background:var(--ground);border-bottom:1px solid var(--line);font-size:.92rem}
+.ticker .wrap{display:flex;align-items:center;gap:16px;min-height:44px}
+.ticker-label{flex:none;font-weight:600;color:var(--navy);display:flex;align-items:center;gap:8px;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+.ticker-label i{width:8px;height:8px;border-radius:50%;background:var(--saffron);box-shadow:0 0 0 4px rgba(233,155,53,.2)}
+.ticker-track{overflow:hidden;flex:1;min-width:0;mask-image:linear-gradient(90deg,transparent,#000 4%,#000 96%,transparent)}
+.ticker-list{display:flex;gap:40px;width:max-content;animation:tick 45s linear infinite;list-style:none;margin:0;padding:0}
+.ticker:hover .ticker-list,.ticker.paused .ticker-list,.ticker:focus-within .ticker-list{animation-play-state:paused}
+.ticker-list a{text-decoration:none;color:var(--text);white-space:nowrap;display:flex;gap:10px;align-items:center}
+.ticker-list a::before{content:"";width:5px;height:5px;background:var(--gold);transform:rotate(45deg)}
+.ticker-list a:hover{color:var(--navy);text-decoration:underline}
+.ticker-pause{flex:none;background:none;border:1px solid var(--line);border-radius:4px;width:32px;height:32px;display:grid;place-items:center;cursor:pointer;color:var(--navy)}
+@keyframes tick{to{transform:translateX(-50%)}}
+@media (max-width:640px){.ticker-label span{display:none}}
+
+/* 3. Hero */
+.hero{background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 500px at 85% 20%,rgba(23,63,104,.95),transparent 70%);pointer-events:none}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:1px;background:linear-gradient(90deg,transparent,rgba(198,161,91,.5),transparent)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:center;padding-block:clamp(48px,7vw,96px) clamp(110px,10vw,140px)}
+.hero h1{color:var(--white);font-size:clamp(2.3rem,1.4rem + 3.6vw,4rem);line-height:1.05;font-weight:600;letter-spacing:-.02em;margin-top:18px}
+.hero h1 em{display:block;font-style:italic;font-weight:500;color:var(--gold-soft)}
+.hero .lede{color:var(--on-navy-muted);font-size:1.15rem;margin-top:22px;max-width:52ch}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-note{display:flex;gap:12px;align-items:flex-start;margin-top:32px;padding:14px 16px;border:1px solid var(--line-dark);border-left:3px solid var(--saffron);border-radius:4px;max-width:56ch;font-size:.93rem;color:var(--on-navy)}
+.hero-note .icon{color:var(--saffron);margin-top:2px}
+.hero-art{position:relative;aspect-ratio:1/1;max-width:560px;width:100%;justify-self:end}
+.hero-art .main{position:absolute;right:0;top:0;width:82%;aspect-ratio:534/491;border-radius:var(--radius);overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.6)}
+.hero-art .main img,.hero-art .sub img{width:100%;height:100%;object-fit:cover}
+.hero-art .frame{position:absolute;right:-14px;top:14px;width:82%;aspect-ratio:534/491;border:1px solid rgba(198,161,91,.55);border-radius:var(--radius)}
+.hero-art .sub{position:absolute;left:0;bottom:0;width:50%;aspect-ratio:405/251;border-radius:var(--radius);overflow:hidden;border:5px solid var(--navy);box-shadow:0 24px 40px -24px rgba(0,0,0,.7)}
+.hero-art .seal{position:absolute;right:4%;bottom:6%;background:var(--white);color:var(--text);border-radius:var(--radius);padding:14px 18px;box-shadow:var(--shadow);max-width:210px}
+.seal small{display:block;font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
+.seal b{display:block;font-family:var(--font-display);font-size:1.9rem;line-height:1.1;color:var(--navy)}
+.seal span{font-size:.84rem;color:var(--muted);line-height:1.35;display:block}
+.hero-art figcaption{position:absolute;left:52%;bottom:-34px;font-size:.78rem;color:var(--on-navy-muted)}
+@media (max-width:940px){.hero .wrap{grid-template-columns:1fr}.hero-art{justify-self:center;max-width:480px}}
+@media (max-width:560px){
+  .hero-art{aspect-ratio:auto;display:grid;max-width:none}
+  .hero-art .main{position:relative;width:100%}
+  .hero-art .frame,.hero-art .sub{display:none}
+  .hero-art .seal{position:relative;right:auto;bottom:auto;margin:-48px 16px 0 auto;max-width:230px}
+}
+
+/* 4. Stats */
+.stats{position:relative;z-index:2;margin-top:-72px}
+.stats-card{background:var(--white);border-radius:var(--radius);box-shadow:var(--shadow);border-top:3px solid var(--gold);display:grid;grid-template-columns:repeat(4,1fr)}
+.stat{padding:28px clamp(18px,2.4vw,32px);display:grid;gap:6px;align-content:start;position:relative}
+.stat+.stat::before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:1px;background:var(--line)}
+.stat dt{order:2;color:var(--muted);font-size:.95rem;line-height:1.4}
+.stat dd{order:1;margin:0;font-family:var(--font-display);font-weight:600;color:var(--navy);font-size:clamp(2rem,1.4rem + 2vw,2.8rem);line-height:1;font-variant-numeric:tabular-nums lining-nums;letter-spacing:-.02em;white-space:nowrap}
+.stat dd small{font-size:.5em;font-weight:500;color:var(--navy-2);margin-left:4px;letter-spacing:0}
+.stat{display:flex;flex-direction:column}
+.stats-meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;padding:12px 2px 0;color:var(--muted);font-size:.84rem}
+@media (max-width:900px){.stats-card{grid-template-columns:repeat(2,1fr)}.stat:nth-child(3)::before{display:none}.stat:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:480px){.stats-card{grid-template-columns:1fr}.stat::before{display:none}.stat+.stat{border-top:1px solid var(--line)}}
+
+/* Highlights carousel */
+.highlights{padding-top:clamp(56px,7vw,88px)}
+.carousel{position:relative;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.slides{position:relative;aspect-ratio:2100/845}
+.slide{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .7s ease,visibility .7s}
+.slide.active{opacity:1;visibility:visible}
+.slide img{width:100%;height:100%;object-fit:contain;background:var(--white)}
+.carousel-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 18px;border-top:1px solid var(--line);flex-wrap:wrap}
+.carousel-caption{font-size:.98rem;color:var(--text);min-width:0;flex:1}
+.carousel-caption b{color:var(--navy);font-weight:600}
+.carousel-controls{display:flex;align-items:center;gap:8px}
+.dots{display:flex;gap:6px;margin-right:8px}
+.dots button{width:10px;height:10px;border-radius:50%;border:1.5px solid var(--navy-2);background:transparent;padding:0;cursor:pointer}
+.dots button[aria-current="true"]{background:var(--navy-2);width:24px;border-radius:5px}
+.ctrl{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--white);display:grid;place-items:center;cursor:pointer;color:var(--navy)}
+.ctrl:hover{border-color:var(--navy)}
+.ctrl .icon{width:18px;height:18px}
+@media (max-width:600px){.dots{display:none}.carousel-bar{flex-direction:column;align-items:stretch}.carousel-controls{justify-content:flex-end}}
+
+/* 5. About */
+.about .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:clamp(36px,6vw,88px);align-items:center}
+.about-media{position:relative}
+.about-media .photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:650/368;box-shadow:var(--shadow)}
+.about-media .photo img{width:100%;height:100%;object-fit:cover}
+.about-media .detail{position:absolute;right:-18px;bottom:-40px;width:46%;border-radius:var(--radius);overflow:hidden;border:5px solid var(--ground);box-shadow:var(--shadow);aspect-ratio:4/3}
+.about-media .detail img{width:100%;height:100%;object-fit:cover;object-position:42% 40%}
+.about-media figcaption{margin-top:14px;font-size:.84rem;color:var(--muted);max-width:52%}
+.about-copy{display:grid;gap:20px}
+.about-copy p{color:var(--text);max-width:62ch}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-block:6px}
+.facts div{padding:16px 16px 16px 0}
+.facts div+div{padding-left:16px;border-left:1px solid var(--line)}
+.facts b{display:block;font-family:var(--font-display);font-size:1.5rem;color:var(--navy);line-height:1.1}
+.facts span{font-size:.86rem;color:var(--muted);line-height:1.35;display:block;margin-top:4px}
+.partners{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.partners small{color:var(--muted);font-size:.8rem;width:100%}
+.partners a{display:block;border:1px solid var(--line);border-radius:4px;background:var(--white);padding:4px;transition:border-color .2s}
+.partners a:hover{border-color:var(--navy-2)}
+.partners img{height:44px;width:auto}
+@media (max-width:900px){.about .wrap{grid-template-columns:1fr}.about-media{margin-bottom:24px}.about-media .detail{right:0}}
+@media (max-width:520px){.facts{grid-template-columns:1fr}.facts div+div{padding-left:0;border-left:0;border-top:1px solid var(--line)}}
+
+/* 6. How it works */
+.how{background:var(--white);border-block:1px solid var(--line)}
+.parties{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:12px;margin-bottom:44px;padding:24px;border:1px dashed var(--line);border-radius:var(--radius);background:var(--ground)}
+.party{display:flex;align-items:center;gap:12px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;min-width:0}
+.party .badge{width:42px;height:42px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:var(--white);flex:none}
+.party.cg .badge{background:var(--gold);color:var(--navy-ink)}
+.party b{display:block;color:var(--navy);line-height:1.2}
+.party span{font-size:.84rem;color:var(--muted);line-height:1.3;display:block}
+.flow{display:grid;gap:4px;justify-items:center;text-align:center;font-size:.8rem;color:var(--muted);min-width:92px}
+.flow .arrow{display:flex;align-items:center;width:100%}
+.flow .arrow i{flex:1;height:2px;background:var(--navy-2)}
+.flow .arrow em{width:0;height:0;border:6px solid transparent;border-left:8px solid var(--navy-2)}
+.flow .arrow.back em{order:-1;border-left:0;border-right:8px solid var(--navy-2)}
+.flow .arrow.gold i{background:var(--gold)}
+.flow .arrow.gold em{border-right-color:var(--gold);border-left-color:transparent}
+.flow b{color:var(--navy);font-weight:600}
+@media (max-width:860px){.parties{grid-template-columns:1fr}.flow{grid-auto-flow:column;justify-content:center;min-width:0}.flow .arrow{width:60px;transform:rotate(90deg)}}
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s;position:relative}
+.step:not(:last-child)::after{content:"";position:absolute;top:31px;left:84px;right:-14px;height:2px;background:repeating-linear-gradient(90deg,var(--gold) 0 8px,transparent 8px 14px)}
+.step{position:relative;display:grid;gap:12px;align-content:start;padding:0 6px}
+.step-num{width:64px;height:64px;border-radius:50%;background:var(--white);border:2px solid var(--navy);display:grid;place-items:center;position:relative;transition:background .25s,color .25s}
+.step-num .icon{width:26px;height:26px;color:var(--navy)}
+.step-num b{position:absolute;right:-6px;top:-6px;width:26px;height:26px;border-radius:50%;background:var(--gold);color:var(--navy-ink);font-size:.82rem;display:grid;place-items:center;font-family:var(--font-display)}
+.step:hover .step-num{background:var(--navy)}
+.step:hover .step-num .icon{color:var(--white)}
+.step .who{font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.step p{color:var(--muted);font-size:.97rem}
+.how-foot{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:44px;padding-top:28px;border-top:1px solid var(--line)}
+.how-foot p{max-width:70ch;color:var(--text)}
+.how-foot strong{color:var(--navy)}
+@media (max-width:960px){.steps{grid-template-columns:repeat(2,1fr);row-gap:36px}.step::after{display:none}}
+@media (max-width:520px){.steps{grid-template-columns:1fr}}
+
+/* 7. Schemes */
+.schemes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+.scheme{background:var(--white);padding:28px;display:grid;grid-template-rows:auto auto 1fr auto;gap:12px;transition:background .25s}
+.scheme:hover{background:#FBFCFD}
+.scheme .ic{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--ground);color:var(--navy);border:1px solid var(--line);transition:background .25s,color .25s}
+.scheme:hover .ic{background:var(--navy);color:var(--gold)}
+.scheme .tag{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.scheme p{color:var(--muted);font-size:.97rem}
+.scheme h3 small{display:block;font-family:var(--font-body);font-size:.8rem;color:var(--navy-2);font-weight:600;letter-spacing:.02em;margin-top:2px}
+@media (max-width:960px){.schemes-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.schemes-grid{grid-template-columns:1fr}}
+
+/* 8. Who benefits */
+.benefit-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(200px,auto);gap:16px}
+.bcard{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--navy);color:var(--white);min-height:220px;display:flex;align-items:flex-end;text-decoration:none}
+.bcard img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.bcard::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,33,61,0) 30%,rgba(11,33,61,.88))}
+.bcard:hover img{transform:scale(1.04)}
+.bcard .txt{position:relative;z-index:1;padding:20px;display:grid;gap:4px}
+.bcard h3{color:var(--white);font-size:1.25rem}
+.bcard p{font-size:.92rem;color:var(--on-navy);line-height:1.4}
+.bcard.tall{grid-row:span 2}
+.bcard.wide{grid-column:span 2}
+.tcard{border:1px solid var(--line);background:var(--white);border-radius:var(--radius);padding:22px;display:grid;align-content:space-between;gap:16px}
+.tcard .ic{color:var(--navy-2)}
+.tcard h3{font-size:1.12rem}
+.tcard p{color:var(--muted);font-size:.93rem;margin-top:6px}
+.tcard.navy{background:var(--navy);border-color:var(--navy)}
+.tcard.navy h3{color:var(--white)}
+.tcard.navy p{color:var(--on-navy-muted)}
+.tcard.navy .ic{color:var(--gold)}
+.tcard.navy .textlink{color:var(--gold-soft)}
+.eligibility-note{margin-top:20px;font-size:.9rem;color:var(--muted)}
+@media (max-width:980px){.benefit-grid{grid-template-columns:repeat(2,1fr)}.bcard.wide{grid-column:span 2}}
+@media (max-width:560px){.benefit-grid{grid-template-columns:1fr}.bcard.wide,.bcard.tall{grid-column:auto;grid-row:auto}}
+
+/* 9. Impact */
+.impact{background:var(--navy);color:var(--on-navy)}
+.impact h2{color:var(--white)}
+.impact .lede{color:var(--on-navy-muted)}
+.impact-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(32px,5vw,72px);align-items:start}
+.impact-photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:2100/845;margin-top:28px}
+.impact-photo img{width:100%;height:100%;object-fit:cover}
+.impact-photo-cap{font-size:.84rem;color:var(--on-navy-muted);margin-top:10px}
+.pull{font-family:var(--font-display);font-size:clamp(1.35rem,1rem + 1.2vw,1.8rem);line-height:1.35;color:var(--white);font-weight:500;margin-top:28px;padding-left:20px;border-left:2px solid var(--gold);max-width:36ch}
+.pull small{display:block;font-family:var(--font-body);font-size:.85rem;color:var(--on-navy-muted);margin-top:10px;font-weight:400}
+.timeline{list-style:none;margin:0;padding:0;position:relative}
+.timeline::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:var(--line-dark)}
+.timeline li{position:relative;padding:0 0 26px 36px}
+.timeline li::before{content:"";position:absolute;left:2px;top:7px;width:11px;height:11px;border-radius:50%;background:var(--navy);border:2px solid var(--gold)}
+.timeline li.now::before{background:var(--gold)}
+.timeline time{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-soft);font-weight:600}
+.timeline b{display:block;color:var(--white);font-weight:600;font-size:1.05rem;line-height:1.35;margin-top:2px}
+.timeline p{color:var(--on-navy-muted);font-size:.93rem;margin-top:4px}
+@media (max-width:900px){.impact-grid{grid-template-columns:1fr}}
+
+/* 10. News */
+.news-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:24px}
+.news-feature{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;display:grid;grid-template-rows:auto 1fr}
+.news-feature .img{aspect-ratio:2100/845;overflow:hidden;background:var(--white)}
+.news-feature .img img{width:100%;height:100%;object-fit:cover}
+.news-feature .body{padding:26px;display:grid;gap:12px;align-content:start}
+.news-feature h3{font-size:1.5rem}
+.news-list{display:grid;gap:12px;align-content:start}
+.nitem{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:12px;text-decoration:none;transition:border-color .2s,transform .2s}
+.nitem:hover{border-color:var(--navy-2);transform:translateY(-2px)}
+.nitem .thumb{aspect-ratio:405/251;border-radius:4px;overflow:hidden;align-self:start}
+.nitem .thumb img{width:100%;height:100%;object-fit:cover}
+.nitem h3{font-family:var(--font-body);font-size:1rem;font-weight:600;line-height:1.35;color:var(--navy)}
+.nitem p{font-size:.88rem;color:var(--muted);line-height:1.45;margin-top:4px}
+.meta{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-size:.8rem;color:var(--muted)}
+.meta time{font-variant-numeric:tabular-nums;font-weight:600;color:var(--navy-2)}
+.pill{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--ground);border:1px solid var(--line);color:var(--navy-2)}
+.pill.gold{background:#F7EFDF;border-color:var(--gold-soft);color:#7A5A1E}
+.announce{margin-top:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.announce a{display:grid;gap:6px;padding:16px;border-radius:var(--radius);border:1px solid var(--line);background:var(--white);text-decoration:none;transition:border-color .2s}
+.announce a:hover{border-color:var(--gold)}
+.announce b{color:var(--navy);line-height:1.3;font-weight:600}
+.announce span{font-size:.82rem;color:var(--muted)}
+@media (max-width:960px){.news-grid{grid-template-columns:1fr}.announce{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.nitem{grid-template-columns:92px minmax(0,1fr);gap:12px}.announce{grid-template-columns:1fr}}
+
+/* 11. Resources */
+.resources{background:var(--white);border-block:1px solid var(--line)}
+.res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.res{display:flex;gap:14px;align-items:flex-start;padding:18px;border:1px solid var(--line);border-radius:var(--radius);text-decoration:none;background:var(--white);transition:border-color .2s,box-shadow .2s}
+.res:hover{border-color:var(--navy-2);box-shadow:var(--shadow)}
+.res .ic{width:40px;height:40px;border-radius:4px;background:var(--ground);display:grid;place-items:center;color:var(--navy);flex:none}
+.res b{display:block;color:var(--navy);font-weight:600;line-height:1.3}
+.res span{font-size:.86rem;color:var(--muted);line-height:1.4;display:block;margin-top:2px}
+.res .type{font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-top:6px}
+@media (max-width:1000px){.res-grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:560px){.res-grid{grid-template-columns:1fr}}
+
+/* 12. Media */
+.media-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.video{display:grid;gap:12px;text-decoration:none}
+.video .cover{position:relative;aspect-ratio:593/354;border-radius:var(--radius);overflow:hidden;border:1px solid var(--line)}
+.video .cover img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.video:hover .cover img{transform:scale(1.03)}
+.play{position:absolute;left:16px;bottom:16px;width:52px;height:52px;border-radius:50%;background:var(--navy);display:grid;place-items:center;box-shadow:0 8px 20px -8px rgba(0,0,0,.6);transition:background .2s}
+.play svg{width:18px;height:18px;fill:var(--white);margin-left:3px}
+.video:hover .play{background:var(--saffron)}
+.video b{color:var(--navy);font-weight:600;display:block}
+.video span{color:var(--muted);font-size:.9rem}
+.video.lead{grid-column:span 2;grid-row:span 2;align-self:start}
+.video.lead .play{width:64px;height:64px;left:22px;bottom:22px}
+.video.lead b{font-size:1.15rem}
+.yt-more{border:1px solid var(--line);border-radius:var(--radius);background:var(--white);padding:24px;display:grid;align-content:space-between;gap:16px;text-decoration:none;transition:border-color .2s}
+.yt-more:hover{border-color:var(--navy-2)}
+.yt-more b{font-family:var(--font-display);color:var(--navy);font-size:1.3rem;line-height:1.25;display:block}
+.yt-more p{color:var(--muted);font-size:.93rem;margin-top:8px}
+@media (max-width:900px){.media-grid{grid-template-columns:repeat(2,1fr)}.video.lead{grid-row:auto}}
+@media (max-width:560px){.media-grid{grid-template-columns:1fr}.video.lead{grid-column:auto}}
+
+/* 13. CTA */
+.cta{background:var(--navy-ink);color:var(--on-navy);position:relative;overflow:hidden}
+.cta .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(32px,5vw,64px);align-items:center;padding-block:clamp(64px,8vw,104px)}
+.cta h2{color:var(--white);font-size:clamp(2rem,1.3rem + 2.6vw,3.2rem)}
+.cta .lede{color:var(--on-navy-muted);margin-top:16px}
+.cta-photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:566/285;position:relative}
+.cta-photo img{width:100%;height:100%;object-fit:cover}
+.cta-photo::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 0 1px rgba(198,161,91,.4);border-radius:var(--radius)}
+.cta-contact{display:flex;gap:28px;flex-wrap:wrap;margin-top:28px;padding-top:24px;border-top:1px solid var(--line-dark)}
+.cta-contact small{display:block;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--on-navy-muted)}
+.cta-contact b{font-family:var(--font-display);font-size:1.3rem;color:var(--white);font-weight:600;font-variant-numeric:tabular-nums;user-select:all}
+@media (max-width:900px){.cta .wrap{grid-template-columns:1fr}}
+
+/* Warning strip */
+.warning{background:#FFF8EC;border-block:1px solid #F1D9AE;color:#5B4416;font-size:.9rem}
+.warning .wrap{display:flex;gap:14px;align-items:flex-start;padding-block:18px}
+.warning .icon{color:#B26B0B;margin-top:3px}
+.warning p+p{margin-top:6px}
+.warning b{color:#3F2E0B}
+
+/* 14. Footer */
+.footer{background:var(--navy);color:var(--on-navy-muted);font-size:.93rem}
+.footer .wrap{padding-block:64px 0}
+.fgrid{display:grid;grid-template-columns:1.5fr repeat(3,1fr) 1.4fr;gap:36px}
+.fbrand{display:grid;gap:16px;align-content:start}
+.fbrand .logo{display:flex;align-items:center;gap:12px}
+.fbrand .logo img{width:56px;height:56px;background:var(--white);border-radius:50%;padding:4px}
+.fbrand .logo b{font-family:var(--font-display);color:var(--white);font-size:1.3rem}
+.footer h3{font-family:var(--font-body);color:var(--white);font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:14px}
+.footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.footer a{text-decoration:none;color:var(--on-navy-muted)}
+.footer a:hover{color:var(--white);text-decoration:underline}
+.contact-list{display:grid;gap:12px}
+.contact-list div{display:flex;gap:10px;align-items:flex-start}
+.contact-list .icon{color:var(--gold);width:18px;height:18px;margin-top:3px}
+.contact-list span{user-select:text}
+.contact-list b{color:var(--white);font-weight:500}
+.social{display:flex;gap:8px;flex-wrap:wrap}
+.social a{width:40px;height:40px;border-radius:50%;border:1px solid var(--line-dark);display:grid;place-items:center;color:var(--on-navy)}
+.social a:hover{background:var(--white);color:var(--navy);text-decoration:none}
+.social svg{width:17px;height:17px;fill:currentColor}
+.fbottom{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid var(--line-dark);margin-top:48px;padding-block:20px calc(20px + env(safe-area-inset-bottom,0px));font-size:.85rem}
+.fbottom nav{display:flex;gap:18px;flex-wrap:wrap}
+.fbottom button{background:none;border:0;color:var(--on-navy-muted);font:inherit;cursor:pointer;padding:0}
+.fbottom button:hover{color:var(--white);text-decoration:underline}
+@media (max-width:1080px){.fgrid{grid-template-columns:repeat(3,1fr)}.fbrand{grid-column:span 3}}
+@media (max-width:640px){.fgrid{grid-template-columns:1fr 1fr}.fbrand,.fcontact{grid-column:span 2}}
+
+/* Search + dialogs */
+.overlay{position:fixed;inset:0;z-index:90;background:rgba(11,33,61,.6);display:none;padding:calc(10vh + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px))}
+.overlay.open{display:block}
+.dialog{max-width:680px;margin:0 auto;background:var(--white);border-radius:var(--radius);box-shadow:0 30px 80px -20px rgba(0,0,0,.5);overflow:hidden;max-height:78vh;display:flex;flex-direction:column}
+.search-head{display:flex;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.search-head input{flex:1;min-width:0;border:0;font:inherit;font-size:1.15rem;color:var(--text);outline:none;padding:8px 0;background:transparent}
+.search-results{overflow-y:auto;padding:8px}
+.search-results a{display:block;padding:10px 12px;border-radius:4px;text-decoration:none}
+.search-results a:hover,.search-results a:focus-visible{background:var(--ground)}
+.search-results b{display:block;color:var(--navy);font-weight:600}
+.search-results small{color:var(--muted)}
+.search-empty{padding:18px 12px;color:var(--muted)}
+.dialog-body{padding:24px;overflow-y:auto;display:grid;gap:12px}
+.dialog-body h2{font-size:1.6rem}
+.dialog-body ul{margin:0;padding-left:20px;display:grid;gap:6px}
+
+/* Reveal */
+.pre{opacity:0;transform:translateY(18px)}
+.reveal-in{transition:opacity .7s ease,transform .7s ease}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></symbol>
+    <symbol id="i-bank" viewBox="0 0 24 24"><path d="M12 3 3 8h18zM5 10v8M9.5 10v8M14.5 10v8M19 10v8M3 21h18"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8 8 9 4.5-1 8-4 8-9V6z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-clip" viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 3h6v3H9zM9 12h6M9 16h4"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4M6 10l6-6 6 6M4 20h16"/></symbol>
+    <symbol id="i-women" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M12 13v8M9 18h6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5"/></symbol>
+    <symbol id="i-store" viewBox="0 0 24 24"><path d="M4 9 5 4h14l1 5M4 9v11h16V9M4 9h16M9 20v-6h6v6"/></symbol>
+    <symbol id="i-tool" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 13l-8 8-4-4 8-8zM3 21l6-6"/><path d="M14 4l6 6"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="4"/><path d="M2 21a7 7 0 0 1 14 0M16 4a4 4 0 0 1 0 8M22 21a7 7 0 0 0-5-6.7"/></symbol>
+    <symbol id="i-rupee" viewBox="0 0 24 24"><path d="M6 4h12M6 9h12M6 4h3a5 5 0 0 1 0 10H6l9 7"/></symbol>
+    <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.6.3-1 .9-1 1.6V14M12 17.5v.01"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><path d="M9 6h12M9 12h12M9 18h12M4 6h.01M4 12h.01M4 18h.01"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h14v16H6a2 2 0 0 0-2 2zM4 21V5M8 7h8"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><path d="M12 3 2 20h20zM12 10v4M12 17v.01"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.5v.01"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></symbol>
+    <symbol id="i-news" viewBox="0 0 24 24"><path d="M4 5h13v14a2 2 0 0 0 2 2H6a2 2 0 0 1-2-2zM17 9h3v10a2 2 0 0 1-2 2M8 9h5M8 13h5M8 17h3"/></symbol>
+    <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 16v-4M12 16V8M16 16v-6"/></symbol>
+    <symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2M3 13h18"/></symbol>
+    <symbol id="i-factory" viewBox="0 0 24 24"><path d="M3 21V10l6 4v-4l6 4V5h6v16zM7 17h2M12 17h2M17 17h2"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></symbol>
+  </defs>
+</svg>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<!-- 1. Government information bar -->
+<div class="govbar" role="region" aria-label="Government identification and accessibility">
+  <div class="wrap">
+    <div class="gov-id"><span class="flag" aria-hidden="true"></span><span data-i18n="gov">Ministry of Micro, Small &amp; Medium Enterprises<span class="full">, Government of India &amp; SIDBI</span></span></div>
+    <div class="gov-tools">
+      <nav class="gov-links" aria-label="Government links">
+        <a href="https://msme.gov.in" target="_blank" rel="noopener">MSME Ministry</a>
+        <a href="https://www.sidbi.in/" target="_blank" rel="noopener">SIDBI</a>
+        <a href="https://udyamimitra.in" target="_blank" rel="noopener">Udyami Mitra</a>
+        <a href="https://www.cgtmse.in/Home/VS/27" target="_blank" rel="noopener">RTI</a>
+      </nav>
+      <span class="gov-sep l" aria-hidden="true"></span>
+      <a href="#main" aria-label="Skip to main content">Skip to content</a>
+      <button type="button" data-font="-1" aria-label="Decrease text size">A−</button>
+      <button type="button" data-font="0" aria-label="Reset text size">A</button>
+      <button type="button" data-font="1" aria-label="Increase text size">A+</button>
+      <button type="button" id="contrastBtn" aria-pressed="false">Contrast</button>
+      <span class="gov-sep" aria-hidden="true"></span>
+      <button type="button" class="langbtn" data-lang="en" aria-pressed="true">English</button>
+      <button type="button" class="langbtn" data-lang="hi" aria-pressed="false" lang="hi">हिंदी</button>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Header and navigation -->
+<header class="header" id="top">
+  <div class="brandrow">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="CGTMSE home">
+        <img src="assets/logo.png" width="72" height="72" alt="CGTMSE logo: a multicoloured flying bird">
+        <span class="brand-name"><strong>CGTMSE</strong><span data-i18n="fullname">Credit Guarantee Fund Trust for Micro and Small Enterprises</span></span>
+      </a>
+      <div class="header-actions">
+        <div class="tollfree"><small data-i18n="tollfree">Toll-free helpline</small><b>1800 222 659</b></div>
+        <button type="button" class="iconbtn" id="searchBtn" aria-label="Search the website"><svg class="icon"><use href="#i-search"/></svg></button>
+        <div class="login" id="loginMenu">
+          <button type="button" class="btn btn-navy" aria-haspopup="true" aria-expanded="false" aria-controls="loginPanel"><svg class="icon"><use href="#i-lock"/></svg><span data-i18n="login">Member Login</span><svg class="icon" style="width:14px"><use href="#i-chev"/></svg></button>
+          <div class="menu-panel" id="loginPanel" role="menu">
+            <div class="label">Portals for Member Lending Institutions</div>
+            <a role="menuitem" href="https://inter.cgtmse.in/jsp/Home.jsp" target="_blank" rel="noopener">CGS-I · Banks<small>Credit Guarantee Scheme for Banks</small></a>
+            <a role="menuitem" href="https://nbfc.cgtmse.in/Aasha/nbfcLogin.html" target="_blank" rel="noopener">CGS-II · NBFCs<small>Credit Guarantee Scheme for NBFCs</small></a>
+            <a role="menuitem" href="https://subdebt.cgtmse.in/SUBDEBT/jsp/Login.jsp" target="_blank" rel="noopener">Sub-Debt Scheme<small>Login for the sub-ordinate debt portal</small></a>
+            <a role="menuitem" href="https://streetvendor.cgtmse.in/SV/Login.html" target="_blank" rel="noopener">PM SVANidhi<small>Guarantee portal for street-vendor loans</small></a>
+            <a role="menuitem" href="https://gmslive.cgtmse.in/" target="_blank" rel="noopener">GMS Portal<small>Guarantee Management System</small></a>
+          </div>
+        </div>
+        <button type="button" class="iconbtn burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer"><svg class="icon"><use href="#i-menu"/></svg></button>
+      </div>
+    </div>
+  </div>
+  <nav class="mainnav" aria-label="Main">
+    <div class="wrap">
+      <ul id="navList"></ul>
+    </div>
+  </nav>
+</header>
+
+<!-- Mobile drawer -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer-scrim" data-close></div>
+  <div class="drawer-panel" role="dialog" aria-modal="true" aria-label="Menu">
+    <div class="drawer-top">
+      <span class="brand-name"><strong>CGTMSE</strong></span>
+      <button type="button" class="iconbtn" data-close aria-label="Close menu"><svg class="icon"><use href="#i-x"/></svg></button>
+    </div>
+    <div id="drawerNav"></div>
+    <div class="drawer-cta">
+      <a class="btn btn-navy" href="https://inter.cgtmse.in/jsp/Home.jsp" target="_blank" rel="noopener"><svg class="icon"><use href="#i-lock"/></svg>Member Login (CGS-I)</a>
+      <a class="btn btn-line" href="https://nbfc.cgtmse.in/Aasha/nbfcLogin.html" target="_blank" rel="noopener">NBFC Login (CGS-II)</a>
+      <p style="color:var(--muted);font-size:.9rem;margin-top:6px">Toll-free helpline: <b style="color:var(--navy)">1800 222 659</b></p>
+    </div>
+  </div>
+</div>
+
+<!-- Special announcements ticker -->
+<div class="ticker" id="ticker" role="region" aria-label="Special announcements">
+  <div class="wrap">
+    <span class="ticker-label"><i aria-hidden="true"></i><span data-i18n="announce">Special Announcements</span></span>
+    <div class="ticker-track">
+      <ul class="ticker-list">
+        <li><a href="https://www.cgtmse.in/Default/ViewFile/?id=1742382157365_Circular%20No.%202502024-25%205cr%20to%2010%20cr.pdf&amp;path=Circular" target="_blank" rel="noopener">Ceiling of guarantee coverage increased to ₹10 crore</a></li>
+        <li><a href="https://www.cgtmse.in/Home/VS/47" target="_blank" rel="noopener">Annual Guarantee Fee reduced to a minimum of 0.37% p.a.</a></li>
+        <li><a href="https://www.cgtmse.in/Default/ViewFile/?id=1734171815262_Circular%20241-%20enhancement%20in%20extent%20of%20coverage%20for%20women%20entrepreneurs%5B90%5D.pdf&amp;path=Circular" target="_blank" rel="noopener">Special benefits to women entrepreneurs</a></li>
+        <li><a href="https://www.cgtmse.in/Default/ViewFile/?id=1770397812214_Circular%20257%20-%20CGS%20for%20Export%20credit%20merged.pdf&amp;path=Circular" target="_blank" rel="noopener">Export credit guarantee launched</a></li>
+        <li aria-hidden="true"><a tabindex="-1" href="https://www.cgtmse.in/Default/ViewFile/?id=1742382157365_Circular%20No.%202502024-25%205cr%20to%2010%20cr.pdf&amp;path=Circular" target="_blank" rel="noopener">Ceiling of guarantee coverage increased to ₹10 crore</a></li>
+        <li aria-hidden="true"><a tabindex="-1" href="https://www.cgtmse.in/Home/VS/47" target="_blank" rel="noopener">Annual Guarantee Fee reduced to a minimum of 0.37% p.a.</a></li>
+        <li aria-hidden="true"><a tabindex="-1" href="https://www.cgtmse.in/Default/ViewFile/?id=1734171815262_Circular%20241-%20enhancement%20in%20extent%20of%20coverage%20for%20women%20entrepreneurs%5B90%5D.pdf&amp;path=Circular" target="_blank" rel="noopener">Special benefits to women entrepreneurs</a></li>
+        <li aria-hidden="true"><a tabindex="-1" href="https://www.cgtmse.in/Default/ViewFile/?id=1770397812214_Circular%20257%20-%20CGS%20for%20Export%20credit%20merged.pdf&amp;path=Circular" target="_blank" rel="noopener">Export credit guarantee launched</a></li>
+      </ul>
+    </div>
+    <button type="button" class="ticker-pause" id="tickerPause" aria-label="Pause announcements" aria-pressed="false"><svg class="icon" style="width:16px;height:16px"><use href="#i-pause"/></svg></button>
+  </div>
+</div>
+
+<main id="main">
+
+<!-- 3. Hero -->
+<section class="hero on-navy" aria-labelledby="hero-title">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" data-i18n="heroEyebrow">Credit guarantees for India's micro &amp; small enterprises</p>
+      <h1 id="hero-title"><span data-i18n="heroL1">Empowering MSMEs.</span> <em data-i18n="heroL2">Strengthening India's Growth.</em></h1>
+      <p class="lede" data-i18n="heroLede">Enabling access to institutional credit through credit guarantee support for eligible Micro and Small Enterprises across India.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="#schemes"><span data-i18n="ctaSchemes">Explore Our Schemes</span><svg class="icon"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="#how" data-i18n="ctaHow">Know How It Works</a>
+      </div>
+      <p class="hero-note"><svg class="icon"><use href="#i-info"/></svg><span><b>CGTMSE does not lend directly.</b> Loans are sanctioned by banks, NBFCs and other Member Lending Institutions; CGTMSE guarantees those loans so that eligible borrowers need not offer collateral or a third-party guarantee.</span></p>
+    </div>
+    <figure class="hero-art" style="margin:0">
+      <span class="frame" aria-hidden="true"></span>
+      <div class="main"><img src="assets/intro.webp" width="534" height="491" alt="A woman entrepreneur smiling at her workbench in a textile workshop" fetchpriority="high"></div>
+      <div class="sub"><img src="assets/ln1.webp" width="405" height="251" alt="A woman shopkeeper standing in her neighbourhood store"></div>
+      <div class="seal"><small>Guarantee ceiling</small><b>₹10 crore</b><span>per eligible borrower under CGS-I, from 1 April 2025</span></div>
+    </figure>
+  </div>
+</section>
+
+<!-- 4. Impact statistics -->
+<section class="stats" aria-labelledby="stats-title">
+  <div class="wrap">
+    <h2 id="stats-title" class="sr-only">CGTMSE at a glance</h2>
+    <dl class="stats-card">
+      <div class="stat"><dt>Cumulative guarantees approved</dt><dd><span class="count" data-to="1.41" data-dec="2">1.41</span><small>crore</small></dd></div>
+      <div class="stat"><dt>Worth of cumulative guarantees approved</dt><dd>₹<span class="count" data-to="13.67" data-dec="2">13.67</span><small>lakh crore</small></dd></div>
+      <div class="stat"><dt>Member Lending Institutions registered under CGS-I and CGS-II</dt><dd><span class="count" data-to="322" data-dec="0">322</span><small>MLIs</small></dd></div>
+      <div class="stat"><dt>Years of guarantee support, since the Trust was set up in 2000</dt><dd><span class="count" data-to="25" data-dec="0">25</span><small>years</small></dd></div>
+    </dl>
+    <div class="stats-meta"><span>Figures as on 31 March 2026, as published on cgtmse.in</span><a class="textlink" href="https://www.cgtmse.in/Home/VS/17" target="_blank" rel="noopener">Financial reports<svg class="icon"><use href="#i-arrow"/></svg></a></div>
+  </div>
+</section>
+
+<!-- Highlights carousel (official banners) -->
+<section class="highlights" aria-labelledby="hl-title">
+  <div class="wrap">
+    <div class="section-head split">
+      <div><p class="eyebrow" data-i18n="hlEyebrow">Highlights</p><h2 id="hl-title" data-i18n="hlTitle">Recent milestones and initiatives</h2></div>
+    </div>
+    <div class="carousel" id="carousel" role="region" aria-roledescription="carousel" aria-label="CGTMSE highlights">
+      <div class="slides" id="slides" aria-live="off"></div>
+      <div class="carousel-bar">
+        <p class="carousel-caption" id="slideCaption"></p>
+        <div class="carousel-controls">
+          <div class="dots" id="dots" role="group" aria-label="Choose slide"></div>
+          <button type="button" class="ctrl" id="prevSlide" aria-label="Previous slide"><svg class="icon"><use href="#i-left"/></svg></button>
+          <button type="button" class="ctrl" id="playSlide" aria-label="Pause slideshow"><svg class="icon"><use href="#i-pause"/></svg></button>
+          <button type="button" class="ctrl" id="nextSlide" aria-label="Next slide"><svg class="icon"><use href="#i-right"/></svg></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. About -->
+<section class="section about" id="about" aria-labelledby="about-title">
+  <div class="wrap">
+    <figure class="about-media" style="margin:0">
+      <div class="photo"><img src="assets/gal.webp" width="650" height="368" loading="lazy" decoding="async" alt="CGTMSE and Government of Tamil Nadu officials exchanging signed agreement documents"></div>
+      <div class="detail"><img src="assets/b4.webp" width="1400" height="563" loading="lazy" decoding="async" alt="Commemorative postage stamp marking 25 years of CGTMSE displayed on stage"></div>
+      <figcaption>An agreement exchange with the Government of Tamil Nadu. Inset: the stamp marking 25 years of CGTMSE.</figcaption>
+    </figure>
+    <div class="about-copy">
+      <p class="eyebrow" data-i18n="aboutEyebrow">About CGTMSE</p>
+      <h2 id="about-title" data-i18n="aboutTitle">Enabling Dreams. Supporting Enterprises.</h2>
+      <p>The Credit Guarantee Fund Trust for Micro and Small Enterprises was set up jointly by the Ministry of Micro, Small &amp; Medium Enterprises, Government of India, and the Small Industries Development Bank of India (SIDBI) to catalyse the flow of institutional credit to micro and small enterprises.</p>
+      <p>Through its Credit Guarantee Scheme, the Trust guarantees collateral-free and third-party-guarantee-free loans given by eligible Member Lending Institutions. The guarantee shares the lender's risk, which makes it easier for banks and NBFCs to lend to first-generation, under-served and new-to-credit entrepreneurs.</p>
+      <div class="facts">
+        <div><b>MoMSME + SIDBI</b><span>Joint founders of the Trust</span></div>
+        <div><b>₹3 lakh crore</b><span>Guarantees approved in FY 2024-25 alone</span></div>
+        <div><b>0.37%</b><span>Lowest Annual Guarantee Fee slab, for loans up to ₹10 lakh</span></div>
+      </div>
+      <div><a class="btn btn-navy" href="https://www.cgtmse.in/Home/VS/3" target="_blank" rel="noopener"><span data-i18n="ctaDiscover">Discover CGTMSE</span><svg class="icon"><use href="#i-arrow"/></svg></a></div>
+      <div class="partners">
+        <small>In collaboration with</small>
+        <a href="https://msme.gov.in" target="_blank" rel="noopener"><img src="assets/msme.webp" width="218" height="102" alt="Ministry of MSME" loading="lazy"></a>
+        <a href="https://www.sidbi.in/" target="_blank" rel="noopener"><img src="assets/sidbi.webp" width="218" height="102" alt="SIDBI" loading="lazy"></a>
+        <a href="https://udyamimitra.in" target="_blank" rel="noopener"><img src="assets/udyami.webp" width="218" height="102" alt="Udyami Mitra" loading="lazy"></a>
+        <a href="http://www.mudra.org.in/" target="_blank" rel="noopener"><img src="assets/mudra.webp" width="218" height="102" alt="MUDRA" loading="lazy"></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. How it works -->
+<section class="section how" id="how" aria-labelledby="how-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="howEyebrow">Understanding the scheme</p>
+      <h2 id="how-title" data-i18n="howTitle">How a CGTMSE guarantee works</h2>
+      <p class="lede">Three parties are involved. The entrepreneur borrows from a lender; CGTMSE stands behind the lender with a guarantee. You never apply to CGTMSE yourself.</p>
+    </div>
+
+    <div class="parties" aria-label="Who does what">
+      <div class="party"><span class="badge"><svg class="icon"><use href="#i-user"/></svg></span><div><b>Entrepreneur</b><span>Micro or small enterprise seeking a loan</span></div></div>
+      <div class="flow"><span class="arrow back"><i></i><em></em></span><b>Loan</b><span>without collateral</span></div>
+      <div class="party"><span class="badge"><svg class="icon"><use href="#i-bank"/></svg></span><div><b>Member Lending Institution</b><span>Bank, NBFC or financial institution registered with CGTMSE</span></div></div>
+      <div class="flow"><span class="arrow back gold"><i></i><em></em></span><b>Guarantee cover</b><span>for a fee</span></div>
+      <div class="party cg"><span class="badge"><svg class="icon"><use href="#i-shield"/></svg></span><div><b>CGTMSE</b><span>Guarantor to the lender, not a lender itself</span></div></div>
+    </div>
+
+    <ol class="steps">
+      <li class="step"><span class="step-num"><svg class="icon"><use href="#i-bank"/></svg><b>1</b></span><span class="who">Entrepreneur</span><h3>Approach an eligible lender</h3><p>Apply for a term loan or working capital at a Member Lending Institution (bank, NBFC or FI) registered with CGTMSE.</p></li>
+      <li class="step"><span class="step-num"><svg class="icon"><use href="#i-clip"/></svg><b>2</b></span><span class="who">Lender</span><h3>Loan appraisal and sanction</h3><p>The lender evaluates the business and the proposal under its own credit appraisal, and sanctions or disburses the loan.</p></li>
+      <li class="step"><span class="step-num"><svg class="icon"><use href="#i-upload"/></svg><b>3</b></span><span class="who">Lender</span><h3>Lender applies for cover</h3><p>After sanction or disbursement, the lender lodges the guarantee application with CGTMSE online.</p></li>
+      <li class="step"><span class="step-num"><svg class="icon"><use href="#i-shield"/></svg><b>4</b></span><span class="who">CGTMSE</span><h3>Guarantee cover is issued</h3><p>CGTMSE approves the application and issues guarantee cover to the lender on receipt of the applicable fee, subject to scheme conditions.</p></li>
+    </ol>
+
+    <div class="how-foot">
+      <p><strong>Important:</strong> CGTMSE does not grant loans, credit facilities or subsidies, and has no agents for arranging them. Talk to any Member Lending Institution directly.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn btn-navy" href="https://www.cgtmse.in/Default/ViewFile/?id=1743176302611_CGTMSE%20-%20Scheme%20Document%20CGS%20I_updated%20as%20on%20Apr%201%202026.pdf&amp;path=Page" target="_blank" rel="noopener"><span data-i18n="ctaGuidelines">Explore Scheme Guidelines</span><svg class="icon"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-line" href="https://www.cgtmse.in/Home/VS/49" target="_blank" rel="noopener">Find a lender</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Schemes -->
+<section class="section" id="schemes" aria-labelledby="schemes-title">
+  <div class="wrap">
+    <div class="section-head split">
+      <div style="display:grid;gap:14px">
+        <p class="eyebrow" data-i18n="schemesEyebrow">Schemes and key benefits</p>
+        <h2 id="schemes-title" data-i18n="schemesTitle">Guarantee schemes administered by CGTMSE</h2>
+      </div>
+      <a class="textlink" href="https://www.cgtmse.in/Circulars" target="_blank" rel="noopener">All circulars<svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="schemes-grid">
+      <article class="scheme"><span class="ic"><svg class="icon"><use href="#i-bank"/></svg></span><h3>Credit Guarantee Scheme for Banks<small>CGS-I</small></h3><p>The flagship scheme. Guarantees collateral-free credit from banks and financial institutions to new and existing micro and small enterprises.</p><a class="textlink" href="https://www.cgtmse.in/Default/ViewFile/?id=1743176302611_CGTMSE%20-%20Scheme%20Document%20CGS%20I_updated%20as%20on%20Apr%201%202026.pdf&amp;path=Page" target="_blank" rel="noopener">Learn more<svg class="icon"><use href="#i-arrow"/></svg></a></article>
+      <article class="scheme"><span class="ic"><svg class="icon"><use href="#i-rupee"/></svg></span><h3>Guarantee coverage up to ₹10 crore<small>Circular 250/2024-25</small></h3><p>The ceiling was raised from ₹5 crore to ₹10 crore per eligible borrower, with fees starting at 0.37% a year for smaller loans.</p><a class="textlink" href="https://www.cgtmse.in/Home/VS/47" target="_blank" rel="noopener">See fee structure<svg class="icon"><use href="#i-arrow"/></svg></a></article>
+      <article class="scheme"><span class="ic"><svg class="icon"><use href="#i-women"/></svg></span><h3>Women entrepreneurs<small>Circular 241</small></h3><p>Enhanced extent of guarantee coverage for loans to enterprises owned by women, to widen their access to formal credit.</p><a class="textlink" href="https://www.cgtmse.in/Default/ViewFile/?id=1734171815262_Circular%20241-%20enhancement%20in%20extent%20of%20coverage%20for%20women%20entrepreneurs%5B90%5D.pdf&amp;path=Circular" target="_blank" rel="noopener">Read circular<svg class="icon"><use href="#i-arrow"/></svg></a></article>
+      <article class="scheme"><span class="ic"><svg class="icon"><use href="#i-users"/></svg></span><h3>Special category beneficiaries<small>Special provisions</small></h3><p>Special benefits for SC/ST, transgender and persons-with-disability entrepreneurs, ZED-certified units, informal micro enterprises, and units in J&amp;K and Ladakh.</p><a class="textlink" href="https://www.cgtmse.in/Circulars" target="_blank" rel="noopener">Browse circulars<svg class="icon"><use href="#i-arrow"/></svg></a></article>
+      <article class="scheme"><span class="ic"><svg class="icon"><use href="#i-globe"/></svg></span><h3>Collateral Support for Export Credit<small>Circular 257/2025-26</small></h3><p>A special credit guarantee scheme for MSME exporters under the Export Promotion Mission (Niryat Protsahan), applied for through the DGFT portal.</p><a class="textlink" href="https://www.cgtmse.in/Default/ViewFile/?id=1770397812214_Circular%20257%20-%20CGS%20for%20Export%20credit%20merged.pdf&amp;path=Circular" target="_blank" rel="noopener">Read circular<svg class="icon"><use href="#i-arrow"/></svg></a></article>
+      <article class="scheme"><span class="ic"><svg class="icon"><use href="#i-briefcase"/></svg></span><h3>Credit Guarantee Scheme for NBFCs<small>CGS-II</small></h3><p>Extends guarantee cover to eligible loans given to micro and small enterprises by registered non-banking financial companies.</p><a class="textlink" href="https://www.cgtmse.in/Default/ViewFile/?id=1744137228030_NBFC-%20CGS%20II%20Scheme%20Document.pdf&amp;path=Page" target="_blank" rel="noopener">Learn more<svg class="icon"><use href="#i-arrow"/></svg></a></article>
+      <article class="scheme"><span class="ic"><svg class="icon"><use href="#i-layers"/></svg></span><h3>Credit Guarantee Scheme for Co-Lending<small>CGSCL</small></h3><p>Covers loans to micro and small enterprises given jointly by banks and NBFCs under co-lending arrangements.</p><a class="textlink" href="https://www.cgtmse.in/Default/ViewFile/?id=1659539206433_Scheme%20Document_merged.pdf&amp;path=Page" target="_blank" rel="noopener">Learn more<svg class="icon"><use href="#i-arrow"/></svg></a></article>
+      <article class="scheme"><span class="ic"><svg class="icon"><use href="#i-store"/></svg></span><h3>PM SVANidhi<small>CGS-PMS</small></h3><p>Guarantee cover for working-capital loans and credit cards given to street vendors under the PM SVANidhi scheme.</p><a class="textlink" href="https://www.cgtmse.in/Default/ViewFile/?id=1607434364745_Scheme%20Document%20-%20PM%20SVANidhi.pdf&amp;path=Page" target="_blank" rel="noopener">Learn more<svg class="icon"><use href="#i-arrow"/></svg></a></article>
+      <article class="scheme"><span class="ic"><svg class="icon"><use href="#i-tool"/></svg></span><h3>PM Vishwakarma<small>Credit guarantee</small></h3><p>Guarantee support for loans to artisans and craftspeople under the PM Vishwakarma scheme, managed through the GMS portal.</p><a class="textlink" href="https://cgtmse.in/DocumentRepository/ckfinder/files/Scheme%20Doc%20-%20PM%20Vishwakarma.pdf" target="_blank" rel="noopener">Learn more<svg class="icon"><use href="#i-arrow"/></svg></a></article>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Who can benefit -->
+<section class="section" id="benefit" style="padding-top:0" aria-labelledby="benefit-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="benefitEyebrow">Who can benefit</p>
+      <h2 id="benefit-title" data-i18n="benefitTitle">An ecosystem built around the small enterprise</h2>
+    </div>
+    <div class="benefit-grid">
+      <a class="bcard tall" href="https://www.cgtmse.in/Home/VS/95" target="_blank" rel="noopener"><img src="assets/intro.webp" width="534" height="491" loading="lazy" decoding="async" alt="Woman working at a textile production unit"><div class="txt"><h3>Women entrepreneurs</h3><p>Enhanced guarantee coverage for women-owned micro and small enterprises.</p></div></a>
+      <a class="bcard wide" href="https://www.cgtmse.in/Home/VS/95" target="_blank" rel="noopener"><img src="assets/mg3.webp" width="566" height="285" loading="lazy" decoding="async" alt="A craftsman working in his small workshop"><div class="txt"><h3>Micro enterprises &amp; manufacturing</h3><p>Workshops, artisans and small factories, new or existing.</p></div></a>
+      <div class="tcard"><svg class="icon ic" style="width:28px;height:28px"><use href="#i-spark"/></svg><div><h3>First-generation entrepreneurs</h3><p>No collateral or third-party guarantor needed to access formal credit.</p></div></div>
+      <a class="bcard" href="https://www.cgtmse.in/Home/VS/95" target="_blank" rel="noopener"><img src="assets/ln2.webp" width="405" height="251" loading="lazy" decoding="async" alt="An older couple reviewing business information on a laptop"><div class="txt"><h3>Small businesses</h3><p>Growing family-run enterprises.</p></div></a>
+      <div class="tcard"><svg class="icon ic" style="width:28px;height:28px"><use href="#i-store"/></svg><div><h3>Service sector &amp; trade</h3><p>Service activities under the MSMED Act, 2006, and retail and wholesale trade.</p></div></div>
+      <div class="tcard navy"><svg class="icon ic" style="width:28px;height:28px"><use href="#i-bank"/></svg><div><h3>Lending institutions</h3><p>Banks, NBFCs and FIs register as MLIs to share credit risk.</p></div><a class="textlink" href="https://www.cgtmse.in/Home/VS/94" target="_blank" rel="noopener">MLI eligibility<svg class="icon"><use href="#i-arrow"/></svg></a></div>
+    </div>
+    <p class="eligibility-note">Eligibility as per the scheme FAQ: new and existing micro and small enterprises in manufacturing or services. Agriculture, Self Help Groups (SHGs) and Joint Liability Groups (JLGs) are not covered. <a class="textlink" href="https://www.cgtmse.in/Home/VS/95" target="_blank" rel="noopener">Check eligible borrowers<svg class="icon"><use href="#i-arrow"/></svg></a></p>
+  </div>
+</section>
+
+<!-- 9. Measuring our impact -->
+<section class="section impact on-navy" id="impact" aria-labelledby="impact-title">
+  <div class="wrap impact-grid">
+    <div>
+      <p class="eyebrow" data-i18n="impactEyebrow">Measuring our impact</p>
+      <h2 id="impact-title" style="margin-top:14px" data-i18n="impactTitle">Twenty-five years of widening access to credit</h2>
+      <p class="lede" style="margin-top:16px">From a new trust in 2000 to over 1.4 crore guarantees, CGTMSE has become a central part of how India's small enterprises get collateral-free finance.</p>
+      <div class="impact-photo"><img src="assets/b5.webp" width="1400" height="563" loading="lazy" decoding="async" alt="Dignitaries on stage holding commemorative frames at a CGTMSE anniversary event"></div>
+      <p class="impact-photo-cap">Dignitaries at the CGTMSE 25-year commemoration.</p>
+      <p class="pull">Approving ₹1 lakh crore of guarantees in a single year, FY 2022-23, was a first for CGTMSE. By FY 2024-25 annual approvals had reached ₹3 lakh crore.<small>Source: cgtmse.in introduction</small></p>
+    </div>
+    <ol class="timeline" aria-label="Institutional milestones">
+      <li><time>2000</time><b>Trust established</b><p>Set up jointly by the Ministry of MSME and SIDBI to guarantee collateral-free loans to micro and small enterprises.</p></li>
+      <li><time>FY 2022-23</time><b>₹1 lakh crore in one year</b><p>Annual guarantee approvals cross ₹1 lakh crore for the first time.</p></li>
+      <li><time>1 April 2023</time><b>Scheme revamped</b><p>Guarantee ceiling raised from ₹2 crore to ₹5 crore and fees reduced, following ₹9,000 crore of corpus infusion announced in Union Budgets 2022-23 and 2023-24.</p></li>
+      <li><time>FY 2024-25</time><b>₹3 lakh crore milestone</b><p>Guarantees worth ₹3 lakh crore approved during the year.</p></li>
+      <li><time>1 April 2025</time><b>Ceiling raised to ₹10 crore</b><p>Higher cover per borrower, with a revised Annual Guarantee Fee structure.</p></li>
+      <li><time>February 2026</time><b>Export credit support</b><p>Special Credit Guarantee Scheme for collateral support to MSME exporters.</p></li>
+      <li class="now"><time>31 March 2026</time><b>1.41 crore guarantees</b><p>Cumulative approvals worth ₹13.67 lakh crore through 322 Member Lending Institutions.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 10. News and announcements -->
+<section class="section" id="news" aria-labelledby="news-title">
+  <div class="wrap">
+    <div class="section-head split">
+      <div style="display:grid;gap:14px"><p class="eyebrow" data-i18n="newsEyebrow">Latest news &amp; announcements</p><h2 id="news-title" data-i18n="newsTitle">Circulars and scheme updates</h2></div>
+      <a class="btn btn-line" href="https://www.cgtmse.in/Circulars" target="_blank" rel="noopener">View all circulars<svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="news-grid">
+      <article class="news-feature">
+        <div class="img"><img src="assets/b2.webp" width="1400" height="563" loading="lazy" decoding="async" alt="Banner announcing the Special Credit Guarantee Scheme for collateral support for export credit under the Export Promotion Mission"></div>
+        <div class="body">
+          <div class="meta"><time datetime="2026-02-06">06 Feb 2026</time><span class="pill gold">New scheme</span><span>Circular 257/2025-26</span></div>
+          <h3>Special Credit Guarantee Scheme: Collateral Support for Export Credit</h3>
+          <p style="color:var(--muted)">A new guarantee scheme for MSME exporters under the Export Promotion Mission (Niryat Protsahan) of the Ministry of Commerce and Industry. Exporters apply through the DGFT portal.</p>
+          <a class="textlink" href="https://www.cgtmse.in/Default/ViewFile/?id=1770397812214_Circular%20257%20-%20CGS%20for%20Export%20credit%20merged.pdf&amp;path=Circular" target="_blank" rel="noopener">Read more<svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </article>
+      <div class="news-list">
+        <a class="nitem" href="https://www.cgtmse.in/Default/ViewFile/?id=1781548514939_TReDS%20Cicular%20262.pdf&amp;path=Circular" target="_blank" rel="noopener"><span class="thumb"><img src="assets/ln3.webp" width="405" height="251" loading="lazy" alt=""></span><span><span class="meta"><time datetime="2026-06-15">15 Jun 2026</time><span class="pill">CGS-I</span></span><h3>Special provision for credit facilities on TReDS</h3><p>Guarantee cover for eligible credit facilities on the Trade Receivables Discounting System. Circular 262/2026-27.</p></span></a>
+        <a class="nitem" href="https://www.cgtmse.in/Default/ViewFile/?id=1781539186666_Circular%20261.pdf&amp;path=Circular" target="_blank" rel="noopener"><span class="thumb"><img src="assets/ln2.webp" width="405" height="251" loading="lazy" alt=""></span><span><span class="meta"><time datetime="2026-06-15">15 Jun 2026</time><span class="pill">CGS-I</span></span><h3>Micro Credit Card: second claim guidelines modified</h3><p>Changes to second-claim lodgement for the Micro Credit Card special provision. Circular 261/2026-27.</p></span></a>
+        <a class="nitem" href="https://www.cgtmse.in/Default/ViewFile/?id=1774432973114_Delhi%20Circular%20no%20260.pdf&amp;path=Circular" target="_blank" rel="noopener"><span class="thumb"><img src="assets/b3.webp" width="1400" height="563" loading="lazy" alt="" style="object-position:20% 50%"></span><span><span class="meta"><time datetime="2026-03-24">24 Mar 2026</time><span class="pill gold">State scheme</span></span><h3>Delhi Credit Guarantee Scheme (DCGS)</h3><p>Enhanced guarantee support for MSEs in Delhi following an MoU with the Delhi Government. Circular 260/2025-26.</p></span></a>
+        <a class="nitem" href="https://www.cgtmse.in/Default/ViewFile/?id=1770817413794_Untitled_20260211_110829.pdf&amp;path=Circular" target="_blank" rel="noopener"><span class="thumb"><img src="assets/ln4.webp" width="405" height="251" loading="lazy" alt=""></span><span><span class="meta"><time datetime="2026-02-10">10 Feb 2026</time><span class="pill">All schemes</span></span><h3>Modification in Credit Guarantee Schemes: third-party guarantee</h3><p>Revised provisions on third-party guarantees. Circular 258/2025-26.</p></span></a>
+      </div>
+    </div>
+    <div class="announce" aria-label="Standing announcements">
+      <a href="https://www.cgtmse.in/Default/ViewFile/?id=1767195870980_Circular.pdf&amp;path=Circular" target="_blank" rel="noopener"><span class="meta"><time datetime="2025-12-31">31 Dec 2025</time></span><b>Guarantee expiry period extended for term loans</b><span>Circular 256/2025-26</span></a>
+      <a href="https://www.cgtmse.in/Default/ViewFile/?id=1767027747558_PM%20SVANidhi%20Scheme%20Guidelines%20-%2016.9.25(Annexure%20-I).pdf&amp;path=Circular" target="_blank" rel="noopener"><span class="meta"><time datetime="2025-12-26">26 Dec 2025</time></span><b>PM SVANidhi guidelines revised; credit card facility</b><span>Circular 255/2025-26</span></a>
+      <a href="https://www.cgtmse.in/Default/ViewFile/?id=1742382157365_Circular%20No.%202502024-25%205cr%20to%2010%20cr.pdf&amp;path=Circular" target="_blank" rel="noopener"><span class="meta"><time datetime="2025-04-01">Effective 1 Apr 2025</time></span><b>Guarantee ceiling raised from ₹5 crore to ₹10 crore</b><span>Circular 250/2024-25</span></a>
+      <a href="https://www.cgtmse.in/Home/VS/47" target="_blank" rel="noopener"><span class="meta"><time datetime="2025-04-01">Effective 1 Apr 2025</time></span><b>Annual Guarantee Fee revised, from 0.37% p.a.</b><span>Fee structure</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 11. Resources -->
+<section class="section resources" id="resources" aria-labelledby="res-title">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-i18n="resEyebrow">Resources &amp; quick access</p>
+      <h2 id="res-title" data-i18n="resTitle">Everything you need, one click away</h2>
+    </div>
+    <div class="res-grid">
+      <a class="res" href="https://www.cgtmse.in/Default/ViewFile/?id=1743176302611_CGTMSE%20-%20Scheme%20Document%20CGS%20I_updated%20as%20on%20Apr%201%202026.pdf&amp;path=Page" target="_blank" rel="noopener"><span class="ic"><svg class="icon"><use href="#i-file"/></svg></span><span><b>Scheme guidelines</b><span>CGS-I scheme document, updated 1 April 2026</span><span class="type">PDF</span></span></a>
+      <a class="res" href="https://www.cgtmse.in/Home/VS/101" target="_blank" rel="noopener"><span class="ic"><svg class="icon"><use href="#i-help"/></svg></span><span><b>FAQs</b><span>General questions on the Credit Guarantee Scheme</span><span class="type">Page</span></span></a>
+      <a class="res" href="https://www.cgtmse.in/Circulars" target="_blank" rel="noopener"><span class="ic"><svg class="icon"><use href="#i-news"/></svg></span><span><b>Circulars</b><span>All circulars, searchable by year and scheme</span><span class="type">Archive</span></span></a>
+      <a class="res" href="https://www.cgtmse.in/Home/VS/17" target="_blank" rel="noopener"><span class="ic"><svg class="icon"><use href="#i-chart"/></svg></span><span><b>Annual reports</b><span>Financial reports, latest FY 2024-25</span><span class="type">Reports</span></span></a>
+      <a class="res" href="https://www.cgtmse.in/Home/VS/49" target="_blank" rel="noopener"><span class="ic"><svg class="icon"><use href="#i-bank"/></svg></span><span><b>Member Lending Institutions</b><span>List of registered banks and FIs under CGS-I</span><span class="type">List</span></span></a>
+      <a class="res" href="https://www.cgtmse.in/Home/VS/47" target="_blank" rel="noopener"><span class="ic"><svg class="icon"><use href="#i-rupee"/></svg></span><span><b>Fee structure</b><span>Annual Guarantee Fee slabs from 0.37% p.a.</span><span class="type">Page</span></span></a>
+      <a class="res" href="https://www.cgtmse.in/Home/VS/50" target="_blank" rel="noopener"><span class="ic"><svg class="icon"><use href="#i-list"/></svg></span><span><b>Documents for registration</b><span>For institutions joining as an MLI</span><span class="type">Checklist</span></span></a>
+      <a class="res" href="https://www.cgtmse.in/Default/ViewFile/?id=1754919522963_Availing%20Credit%20Guarantees%20through%20CGTMSE%20Your%20Path%20to%20Collateral-Free%20Loans.pdf&amp;path=Page" target="_blank" rel="noopener"><span class="ic"><svg class="icon"><use href="#i-book"/></svg></span><span><b>How to avail a loan</b><span>Guide to collateral-free loans under the scheme</span><span class="type">PDF</span></span></a>
+      <a class="res" href="https://www.cgtmse.in/Blogs" target="_blank" rel="noopener"><span class="ic"><svg class="icon"><use href="#i-spark"/></svg></span><span><b>Blogs &amp; awareness</b><span>Explainers and updates from CGTMSE</span><span class="type">Articles</span></span></a>
+      <a class="res" href="https://www.cgtmse.in/Home/VS/27" target="_blank" rel="noopener"><span class="ic"><svg class="icon"><use href="#i-info"/></svg></span><span><b>Right to Information</b><span>RTI disclosures and contact officer</span><span class="type">Page</span></span></a>
+      <a class="res" href="https://www.cgtmse.in/Tenders" target="_blank" rel="noopener"><span class="ic"><svg class="icon"><use href="#i-clip"/></svg></span><span><b>Tenders</b><span>Current procurement notices</span><span class="type">Notices</span></span></a>
+      <a class="res" href="https://www.cgtmse.in/Home/VS/8" target="_blank" rel="noopener"><span class="ic"><svg class="icon"><use href="#i-phone"/></svg></span><span><b>Contact information</b><span>Head office, phone numbers and hours</span><span class="type">Page</span></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 12. Media -->
+<section class="section" id="media" aria-labelledby="media-title">
+  <div class="wrap">
+    <div class="section-head split">
+      <div style="display:grid;gap:14px"><p class="eyebrow" data-i18n="mediaEyebrow">Videos</p><h2 id="media-title" data-i18n="mediaTitle">Leaders of India's lending institutions on CGTMSE</h2></div>
+      <a class="textlink" href="https://www.youtube.com/@cgtmseudaan6794" target="_blank" rel="noopener">CGTMSE on YouTube<svg class="icon"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="media-grid">
+      <a class="video lead" href="https://www.youtube.com/watch?v=rJcDSGHKfys" target="_blank" rel="noopener"><span class="cover"><img src="assets/v_rana.webp" width="593" height="354" loading="lazy" alt="Video: Surender Rana, DMD (Retail – Agri, SME &amp; FI), State Bank of India"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></span><span class="txt"><b>Surender Rana</b><span>DMD (Retail – Agri, SME &amp; FI), State Bank of India</span></span></a>
+      <a class="video" href="https://www.youtube.com/watch?v=vN0yJeicGHg" target="_blank" rel="noopener"><span class="cover"><img src="assets/v_prashant.webp" width="593" height="354" loading="lazy" alt="Video: Prashant Kumar, MD and CEO, YES BANK"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></span><span class="txt"><b>Prashant Kumar</b><span>MD &amp; CEO, YES BANK</span></span></a>
+      <a class="video" href="https://www.youtube.com/watch?v=epH277yjar0" target="_blank" rel="noopener"><span class="cover"><img src="assets/v_rajneesh.webp" width="593" height="354" loading="lazy" alt="Video: Rajneesh Karnatak, MD and CEO, Bank of India"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></span><span class="txt"><b>Rajneesh Karnatak</b><span>MD &amp; CEO, Bank of India</span></span></a>
+      <a class="video" href="https://www.youtube.com/watch?v=8OR-PvUtmME" target="_blank" rel="noopener"><span class="cover"><img src="assets/v_nitesh.webp" width="593" height="354" loading="lazy" alt="Video: Nitesh Ranjan, Executive Director, Union Bank of India"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></span><span class="txt"><b>Nitesh Ranjan</b><span>Executive Director, Union Bank of India</span></span></a>
+      <a class="video" href="https://www.youtube.com/watch?v=xtYY9EIBjx8" target="_blank" rel="noopener"><span class="cover"><img src="assets/v_bhavesh.webp" width="593" height="354" loading="lazy" alt="Video: Bhavesh Zaveri, Executive Director, HDFC Bank"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 4v16l13-8z"/></svg></span></span><span class="txt"><b>Bhavesh Zaveri</b><span>Executive Director, HDFC Bank</span></span></a>
+      <a class="yt-more" href="https://www.youtube.com/@cgtmseudaan6794" target="_blank" rel="noopener"><span><svg class="icon" style="width:30px;height:30px;color:var(--navy-2)"><use href="#i-play"/></svg></span><span><b>Explainers and customer stories</b><p>Watch more videos, including entrepreneurs who grew with collateral-free credit, on the CGTMSE YouTube channel.</p></span><span class="textlink">Open channel<svg class="icon"><use href="#i-arrow"/></svg></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 13. Call to action -->
+<section class="cta on-navy" aria-labelledby="cta-title">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow" data-i18n="ctaEyebrow">Get started</p>
+      <h2 id="cta-title" style="margin-top:14px" data-i18n="ctaTitle">Together, Building a Stronger MSME India.</h2>
+      <p class="lede">Discover how credit guarantee support can help strengthen access to finance for eligible micro and small enterprises.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="https://www.cgtmse.in/Home/VS/3" target="_blank" rel="noopener"><span data-i18n="ctaExplore">Explore CGTMSE</span><svg class="icon"><use href="#i-arrow"/></svg></a>
+        <a class="btn btn-ghost" href="https://www.cgtmse.in/Home/VS/8" target="_blank" rel="noopener" data-i18n="ctaContact">Contact Us</a>
+      </div>
+      <div class="cta-contact">
+        <div><small>Toll-free</small><b>1800 222 659</b></div>
+        <div><small>Office</small><b>(022) 6722 1553</b></div>
+        <div><small>Hours</small><b>10:00 – 18:00</b></div>
+      </div>
+    </div>
+    <div class="cta-photo"><img src="assets/mg2.webp" width="566" height="285" loading="lazy" decoding="async" alt="Hands using a tablet showing digital payments and rupee symbols"></div>
+  </div>
+</section>
+
+<!-- Official warning (retained from current website) -->
+<aside class="warning" aria-label="Important notice">
+  <div class="wrap">
+    <svg class="icon"><use href="#i-alert"/></svg>
+    <div>
+      <p><b>Important note:</b> CGTMSE does not provide any financial assistance. It only gives guarantees for the collateral / third-party-guarantee-free assistance provided by its Member Lending Institutions, viz. banks, RRBs and select financial institutions. CGTMSE does not have any agents or agencies for arranging loans, credit facilities or subsidies.</p>
+      <p><b>Warning:</b> www.cgtmse-govt.in, www.cgtmse-gov.in and www.pmay-gov.in are not our websites. Our primary website is www.cgtmse.in, also reachable at www.cgtsi.org.in, www.cgtmse.com, www.cgtmse.co.in and www.cgtmse.org.in. Anybody dealing with websites with deceptively similar addresses does so at their own risk.</p>
+    </div>
+  </div>
+</aside>
+
+</main>
+
+<!-- 14. Footer -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fbrand">
+        <div class="logo"><img src="assets/logo.png" width="72" height="72" alt="CGTMSE logo"><b>CGTMSE</b></div>
+        <p>Credit Guarantee Fund Trust for Micro and Small Enterprises. Set up by the Ministry of MSME, Government of India, and SIDBI to catalyse the flow of institutional credit to micro and small enterprises.</p>
+        <div class="social" aria-label="CGTMSE on social media">
+          <a href="https://www.facebook.com/CGTMSEOfficial/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v2H8v4h2v8h4v-8h3l1-4h-4V8.5c0-.3.2-.5.5-.5z"/></svg></a>
+          <a href="https://twitter.com/CGTMSEOfficial" target="_blank" rel="noopener" aria-label="X (Twitter)"><svg viewBox="0 0 24 24"><path d="M17.5 3h3l-6.6 7.6L22 21h-6.2l-4.9-6.4L5.3 21h-3l7.1-8.1L2 3h6.3l4.4 5.9zm-1.1 16.2h1.7L7.7 4.7H5.9z"/></svg></a>
+          <a href="https://in.linkedin.com/company/cgtmse-india" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4 9h4v12H4zM6 3a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM10 9h3.8v1.7c.6-1 1.9-2 3.9-2 4 0 4.3 2.6 4.3 6V21h-4v-5.5c0-1.4 0-3.2-2-3.2s-2.2 1.5-2.2 3.1V21H10z"/></svg></a>
+          <a href="https://www.instagram.com/CGTMSEOfficial/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M8 3h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3zm4 3.5a3.5 3.5 0 1 1 0 7 3.5 3.5 0 0 1 0-7zm0 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM17 6.2a.9.9 0 1 1 0 1.8.9.9 0 0 1 0-1.8z"/></svg></a>
+          <a href="https://www.youtube.com/@cgtmseudaan6794" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M22 8.2c0-1.6-1.2-2.9-2.8-3C17 5 14.5 5 12 5s-5 0-7.2.2C3.2 5.3 2 6.6 2 8.2 1.9 9.5 1.9 10.7 1.9 12s0 2.5.1 3.8c0 1.6 1.2 2.9 2.8 3 2.2.2 4.7.2 7.2.2s5 0 7.2-.2c1.6-.1 2.8-1.4 2.8-3 .1-1.3.1-2.5.1-3.8s0-2.5-.1-3.8zM10 15.5v-7l6 3.5z"/></svg></a>
+          <a href="https://whatsapp.com/channel/0029Vb7xC1f8kyyEMFTGwz0u" target="_blank" rel="noopener" aria-label="WhatsApp channel"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1 2.7c.1.2 1.8 2.8 4.4 3.9 1.6.7 2.3.8 3.1.6.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h3>About</h3>
+        <ul>
+          <li><a href="https://www.cgtmse.in/Home/VS/3" target="_blank" rel="noopener">About CGTMSE</a></li>
+          <li><a href="https://www.cgtmse.in/Home/VS/36" target="_blank" rel="noopener">Board of Trustees</a></li>
+          <li><a href="https://www.cgtmse.in/Home/VS/37" target="_blank" rel="noopener">Key Management Personnel</a></li>
+          <li><a href="https://www.cgtmse.in/Home/VS/42" target="_blank" rel="noopener">Careers</a></li>
+          <li><a href="https://www.cgtmse.in/galleryphotos" target="_blank" rel="noopener">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Schemes</h3>
+        <ul>
+          <li><a href="https://www.cgtmse.in/Default/ViewFile/?id=1743176302611_CGTMSE%20-%20Scheme%20Document%20CGS%20I_updated%20as%20on%20Apr%201%202026.pdf&amp;path=Page" target="_blank" rel="noopener">CGS-I for Banks</a></li>
+          <li><a href="https://www.cgtmse.in/Default/ViewFile/?id=1744137228030_NBFC-%20CGS%20II%20Scheme%20Document.pdf&amp;path=Page" target="_blank" rel="noopener">CGS-II for NBFCs</a></li>
+          <li><a href="https://www.cgtmse.in/Default/ViewFile/?id=1659539206433_Scheme%20Document_merged.pdf&amp;path=Page" target="_blank" rel="noopener">Co-Lending (CGSCL)</a></li>
+          <li><a href="https://www.cgtmse.in/Default/ViewFile/?id=1607434364745_Scheme%20Document%20-%20PM%20SVANidhi.pdf&amp;path=Page" target="_blank" rel="noopener">PM SVANidhi</a></li>
+          <li><a href="https://cgtmse.in/DocumentRepository/ckfinder/files/Scheme%20Doc%20-%20PM%20Vishwakarma.pdf" target="_blank" rel="noopener">PM Vishwakarma</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="https://www.cgtmse.in/Circulars" target="_blank" rel="noopener">Circulars</a></li>
+          <li><a href="https://www.cgtmse.in/Home/VS/17" target="_blank" rel="noopener">Annual reports</a></li>
+          <li><a href="https://www.cgtmse.in/Home/VS/49" target="_blank" rel="noopener">List of MLIs</a></li>
+          <li><a href="https://www.cgtmse.in/Home/VS/47" target="_blank" rel="noopener">Fee structure</a></li>
+          <li><a href="https://www.cgtmse.in/Home/VS/18" target="_blank" rel="noopener">Useful links</a></li>
+          <li><a href="https://www.cgtmse.in/Tenders" target="_blank" rel="noopener">Tenders</a></li>
+        </ul>
+      </div>
+      <div class="fcontact">
+        <h3>Contact</h3>
+        <div class="contact-list">
+          <div><svg class="icon"><use href="#i-pin"/></svg><span>1st Floor, SIDBI, Swavalamban Bhavan, C-11, G-Block, BKC, Bandra (East), Mumbai – 400 051</span></div>
+          <div><svg class="icon"><use href="#i-phone"/></svg><span>Toll-free <b>1800 222 659</b><br>(022) 6722 1553 · 6753 1313 · 6722 1483</span></div>
+          <div><svg class="icon"><use href="#i-mail"/></svg><span>IT support for MLIs: <b>support@cgtmse.in</b></span></div>
+          <div><svg class="icon"><use href="#i-clock"/></svg><span>Office hours 10:00 – 18:00</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© 2026 CGTMSE. All rights reserved.</span>
+      <nav aria-label="Legal">
+        <a href="https://www.cgtmse.in/Default/ViewFile/?id=1725894145578_CGTMSE_Privacy%20Policy%20for%20website.pdf&amp;path=Page" target="_blank" rel="noopener">Privacy Policy</a>
+        <a href="https://www.cgtmse.in/Home/VS/19" target="_blank" rel="noopener">Disclaimer</a>
+        <a href="https://www.cgtmse.in/Home/VS/27" target="_blank" rel="noopener">RTI</a>
+        <button type="button" id="a11yBtn">Accessibility Statement</button>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<!-- Search dialog -->
+<div class="overlay" id="searchOverlay">
+  <div class="dialog" role="dialog" aria-modal="true" aria-label="Search the website">
+    <div class="search-head">
+      <svg class="icon" style="color:var(--muted)"><use href="#i-search"/></svg>
+      <label for="searchInput" class="sr-only">Search pages, schemes and documents</label>
+      <input id="searchInput" type="search" placeholder="Search schemes, circulars, FAQs…" autocomplete="off">
+      <button type="button" class="iconbtn" data-close aria-label="Close search"><svg class="icon"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="search-results" id="searchResults" aria-live="polite"></div>
+  </div>
+</div>
+
+<!-- Accessibility statement -->
+<div class="overlay" id="a11yOverlay">
+  <div class="dialog" role="dialog" aria-modal="true" aria-labelledby="a11y-title">
+    <div class="search-head" style="justify-content:flex-end"><button type="button" class="iconbtn" data-close aria-label="Close"><svg class="icon"><use href="#i-x"/></svg></button></div>
+    <div class="dialog-body">
+      <h2 id="a11y-title">Accessibility statement</h2>
+      <p>This homepage is designed to be usable by as many people as possible, following WCAG 2.1 guidance.</p>
+      <ul>
+        <li>Every function works with a keyboard, with a visible focus ring and a "Skip to content" link.</li>
+        <li>Text size can be changed with the A−, A and A+ controls; a high-contrast mode is available.</li>
+        <li>Moving content (announcements and the highlights slideshow) can be paused, and stops automatically if your device asks for reduced motion.</li>
+        <li>Images carry text alternatives; decorative images are hidden from screen readers.</li>
+        <li>Headings and landmarks follow a logical order for screen-reader navigation.</li>
+      </ul>
+      <p>To report an accessibility problem, call the toll-free helpline 1800 222 659 or (022) 6722 1553 during office hours.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  const CG='https://www.cgtmse.in';
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Navigation data (real cgtmse.in destinations) ---------- */
+  const NAV=[
+    {key:'home',label:'Home',href:'#top',local:true},
+    {key:'about',label:'About Us',items:[
+      ['About CGTMSE',CG+'/Home/VS/3'],['Board of Trustees',CG+'/Home/VS/36'],['Key Management Personnel',CG+'/Home/VS/37'],['Financial Reports',CG+'/Home/VS/17'],['Environment & Social Policy',CG+'/Default/ViewFile/?id=1673693521864_Environmental%20and%20Social%20Policy.pdf&path=Page'],['Fraud Management Policy',CG+'/Default/ViewFile/?id=1707484884745_Fraud%20Management%20Policy.pdf&path=Page']]},
+    {key:'schemes',label:'Schemes',items:[
+      ['CGS-I · Scheme for Banks',CG+'/Default/ViewFile/?id=1743176302611_CGTMSE%20-%20Scheme%20Document%20CGS%20I_updated%20as%20on%20Apr%201%202026.pdf&path=Page'],['CGS-II · Scheme for NBFCs',CG+'/Default/ViewFile/?id=1744137228030_NBFC-%20CGS%20II%20Scheme%20Document.pdf&path=Page'],['Co-Lending (CGSCL)',CG+'/Default/ViewFile/?id=1659539206433_Scheme%20Document_merged.pdf&path=Page'],['PM SVANidhi',CG+'/Default/ViewFile/?id=1607434364745_Scheme%20Document%20-%20PM%20SVANidhi.pdf&path=Page'],['PM Vishwakarma','https://cgtmse.in/DocumentRepository/ckfinder/files/Scheme%20Doc%20-%20PM%20Vishwakarma.pdf'],['Export Credit Guarantee',CG+'/Default/ViewFile/?id=1770397812214_Circular%20257%20-%20CGS%20for%20Export%20credit%20merged.pdf&path=Circular'],['Fee Structure',CG+'/Home/VS/47']]},
+    {key:'ent',label:'For Entrepreneurs',items:[
+      ['How it works','#how'],['Eligible borrowers',CG+'/Home/VS/95'],['Credit facilities & parameters',CG+'/Home/VS/96'],['How to avail a loan (guide)',CG+'/Default/ViewFile/?id=1754919522963_Availing%20Credit%20Guarantees%20through%20CGTMSE%20Your%20Path%20to%20Collateral-Free%20Loans.pdf&path=Page'],['Find a lender (list of MLIs)',CG+'/Home/VS/49'],['General FAQs',CG+'/Home/VS/101']]},
+    {key:'mli',label:'For Member Lending Institutions',short:'For Lenders',items:[
+      ['MLI eligibility & responsibilities',CG+'/Home/VS/94'],['Documents for registration',CG+'/Home/VS/50'],['Annual Guarantee Fee (AGF)',CG+'/Home/VS/98'],['Extent of cover, invocation & claims',CG+'/Home/VS/99'],['Legal proceedings, OTS',CG+'/Home/VS/100'],['IT / system FAQs',CG+'/Home/VS/102'],['NBFC FAQs (CGS-II)',CG+'/Home/VS/55']]},
+    {key:'res',label:'Resources',items:[
+      ['Annual reports',CG+'/Home/VS/17'],['Blogs',CG+'/Blogs'],['Gallery',CG+'/galleryphotos'],['Useful links',CG+'/Home/VS/18'],['Tenders',CG+'/Tenders'],['Careers',CG+'/Home/VS/42'],['RTI',CG+'/Home/VS/27']]},
+    {key:'circ',label:'Circulars',href:CG+'/Circulars'},
+    {key:'news',label:'News & Events',href:'#news',local:true},
+    {key:'contact',label:'Contact Us',href:CG+'/Home/VS/8'}
+  ];
+  const HI={home:'होम',about:'हमारे बारे में',schemes:'योजनाएँ',ent:'उद्यमियों के लिए',mli:'ऋणदात्री संस्थाओं के लिए',res:'संसाधन',circ:'परिपत्र',news:'समाचार एवं कार्यक्रम',contact:'संपर्क करें'};
+  const ext=h=>!h.startsWith('#');
+  const attrs=h=>ext(h)?' target="_blank" rel="noopener"':'';
+  const esc=s=>s.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+
+  const navList=document.getElementById('navList');
+  navList.innerHTML=NAV.map((n,i)=>{
+    const lbl=`<span data-nav="${n.key}">${esc(n.short||n.label)}</span>`;
+    if(!n.items) return `<li><a class="navlink${i===0?' current':''}" href="${n.href}"${attrs(n.href)}>${lbl}</a></li>`;
+    return `<li class="dd"><button type="button" class="navlink" aria-expanded="false" aria-controls="dd-${n.key}">${lbl}<svg class="icon"><use href="#i-chev"/></svg></button>
+      <div class="menu-panel" id="dd-${n.key}">${n.items.map(([t,h])=>`<a href="${h}"${attrs(h)}>${esc(t)}</a>`).join('')}</div></li>`;
+  }).join('');
+
+  const drawerNav=document.getElementById('drawerNav');
+  drawerNav.innerHTML=NAV.map(n=>{
+    if(!n.items) return `<a class="dlink" href="${n.href}"${attrs(n.href)}><span data-nav="${n.key}">${esc(n.label)}</span></a>`;
+    return `<details><summary><span data-nav="${n.key}">${esc(n.label)}</span><svg class="icon"><use href="#i-chev"/></svg></summary><div>${n.items.map(([t,h])=>`<a href="${h}"${attrs(h)}>${esc(t)}</a>`).join('')}</div></details>`;
+  }).join('');
+
+  /* ---------- Dropdowns (click + hover + keyboard) ---------- */
+  function closeAll(except){document.querySelectorAll('.dd.open,.login.open').forEach(li=>{if(li!==except){li.classList.remove('open');const b=li.querySelector('button');b&&b.setAttribute('aria-expanded','false')}})}
+  function setupDD(li){
+    const btn=li.querySelector('button');let t;
+    const open=()=>{closeAll(li);li.classList.add('open');btn.setAttribute('aria-expanded','true')};
+    const close=()=>{li.classList.remove('open');btn.setAttribute('aria-expanded','false')};
+    btn.addEventListener('click',e=>{e.stopPropagation();li.classList.contains('open')?close():open()});
+    if(window.matchMedia('(hover:hover)').matches){li.addEventListener('mouseenter',()=>{clearTimeout(t);open()});li.addEventListener('mouseleave',()=>{t=setTimeout(close,140)})}
+    li.addEventListener('keydown',e=>{
+      const links=[...li.querySelectorAll('.menu-panel a')];
+      if(e.key==='Escape'){close();btn.focus()}
+      if(e.key==='ArrowDown'){e.preventDefault();if(!li.classList.contains('open'))open();const i=links.indexOf(document.activeElement);(links[i+1]||links[0]).focus()}
+      if(e.key==='ArrowUp'){e.preventDefault();const i=links.indexOf(document.activeElement);(links[i-1]||links[links.length-1]).focus()}
+    });
+    li.addEventListener('focusout',e=>{if(!li.contains(e.relatedTarget))close()});
+  }
+  document.querySelectorAll('.dd').forEach(setupDD);
+  setupDD(document.getElementById('loginMenu'));
+  document.addEventListener('click',()=>closeAll());
+
+  /* ---------- Sticky header shadow ---------- */
+  const header=document.querySelector('.header');
+  const onScroll=()=>header.classList.toggle('scrolled',window.scrollY>40);
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+  /* ---------- Overlays: drawer, search, accessibility ---------- */
+  let lastFocus=null;
+  function openLayer(el,focusSel){lastFocus=document.activeElement;el.classList.add('open');el.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';const f=el.querySelector(focusSel||'button,a,input');f&&setTimeout(()=>f.focus(),30)}
+  function closeLayer(el){el.classList.remove('open');el.setAttribute('aria-hidden','true');document.body.style.overflow='';lastFocus&&lastFocus.focus()}
+  document.querySelectorAll('.drawer,.overlay').forEach(el=>{
+    el.addEventListener('click',e=>{if(e.target.closest('[data-close]')||e.target===el)closeLayer(el)});
+    el.addEventListener('keydown',e=>{
+      if(e.key==='Escape')closeLayer(el);
+      if(e.key==='Tab'){const f=[...el.querySelectorAll('a,button,input,summary')].filter(x=>x.offsetParent);if(!f.length)return;const a=f[0],z=f[f.length-1];if(e.shiftKey&&document.activeElement===a){e.preventDefault();z.focus()}else if(!e.shiftKey&&document.activeElement===z){e.preventDefault();a.focus()}}
+    });
+  });
+  const drawer=document.getElementById('drawer'),burger=document.getElementById('burger');
+  burger.addEventListener('click',()=>{openLayer(drawer);burger.setAttribute('aria-expanded','true')});
+  drawer.addEventListener('click',e=>{if(e.target.closest('a'))closeLayer(drawer)});
+  new MutationObserver(()=>burger.setAttribute('aria-expanded',drawer.classList.contains('open'))).observe(drawer,{attributes:true});
+
+  const searchOverlay=document.getElementById('searchOverlay'),input=document.getElementById('searchInput'),results=document.getElementById('searchResults');
+  const INDEX=[];
+  NAV.forEach(n=>{if(n.items)n.items.forEach(([t,h])=>INDEX.push({t,h,g:n.label}));else INDEX.push({t:n.label,h:n.href,g:'Main menu'})});
+  [['Member login: CGS-I (banks)','https://inter.cgtmse.in/jsp/Home.jsp','Portals'],['Member login: CGS-II (NBFCs)','https://nbfc.cgtmse.in/Aasha/nbfcLogin.html','Portals'],['Sub-Debt Scheme login','https://subdebt.cgtmse.in/SUBDEBT/jsp/Login.jsp','Portals'],['PM SVANidhi portal','https://streetvendor.cgtmse.in/SV/Login.html','Portals'],['GMS portal','https://gmslive.cgtmse.in/','Portals'],['Women entrepreneurs: enhanced coverage (Circular 241)',CG+'/Default/ViewFile/?id=1734171815262_Circular%20241-%20enhancement%20in%20extent%20of%20coverage%20for%20women%20entrepreneurs%5B90%5D.pdf&path=Circular','Circulars'],['TReDS special provision (Circular 262)',CG+'/Default/ViewFile/?id=1781548514939_TReDS%20Cicular%20262.pdf&path=Circular','Circulars'],['Delhi Credit Guarantee Scheme (Circular 260)',CG+'/Default/ViewFile/?id=1774432973114_Delhi%20Circular%20no%20260.pdf&path=Circular','Circulars'],['Privacy Policy',CG+'/Default/ViewFile/?id=1725894145578_CGTMSE_Privacy%20Policy%20for%20website.pdf&path=Page','Policies'],['AML & Sanction Policy',CG+'/Default/ViewFile/?id=1722941731455_AML%20Sanction%20Policy.pdf&path=Page','Policies'],['Anti-Bribery & Anti-Corruption Policy',CG+'/Default/ViewFile/?id=1707484760364_Anti-Bribery%20%20Anti-Corruption%20Policy.pdf&path=Page','Policies'],['Disclaimer',CG+'/Home/VS/19','Legal'],['Videos on YouTube','https://www.youtube.com/@cgtmseudaan6794','Media'],['Schemes on this page','#schemes','This page'],['Who can benefit','#benefit','This page'],['Impact and milestones','#impact','This page'],['Resources','#resources','This page']].forEach(([t,h,g])=>INDEX.push({t,h,g}));
+  function render(q){
+    q=q.trim().toLowerCase();
+    const list=q?INDEX.filter(x=>(x.t+' '+x.g).toLowerCase().includes(q)):INDEX.slice(0,10);
+    results.innerHTML=list.length?list.slice(0,14).map(x=>`<a href="${x.h}"${attrs(x.h)}><b>${esc(x.t)}</b><small>${esc(x.g)}${ext(x.h)?' · cgtmse.in':''}</small></a>`).join(''):`<p class="search-empty">No matches for “${esc(q)}”. Try “fee”, “NBFC”, “circular” or “women”.</p>`;
+  }
+  document.getElementById('searchBtn').addEventListener('click',()=>{render('');openLayer(searchOverlay,'input')});
+  input.addEventListener('input',()=>render(input.value));
+  results.addEventListener('click',e=>{if(e.target.closest('a'))closeLayer(searchOverlay)});
+  document.addEventListener('keydown',e=>{if(e.key==='/'&&!/input|textarea/i.test(document.activeElement.tagName)){e.preventDefault();render('');openLayer(searchOverlay,'input')}});
+  const a11y=document.getElementById('a11yOverlay');
+  document.getElementById('a11yBtn').addEventListener('click',()=>openLayer(a11y));
+
+  /* ---------- Accessibility tools ---------- */
+  let fs=0;
+  document.querySelectorAll('[data-font]').forEach(b=>b.addEventListener('click',()=>{const d=+b.dataset.font;fs=d===0?0:Math.max(-1,Math.min(3,fs+d));document.documentElement.style.setProperty('--fs-base',(17+fs*1.5)+'px')}));
+  const cb=document.getElementById('contrastBtn');
+  cb.addEventListener('click',()=>{const on=document.documentElement.classList.toggle('hc');cb.setAttribute('aria-pressed',on)});
+
+  /* ---------- Language toggle (interface labels and headings) ---------- */
+  const HIT={gov:'सूक्ष्म, लघु एवं मध्यम उद्यम मंत्रालय, भारत सरकार एवं सिडबी',fullname:'सूक्ष्म एवं लघु उद्यमों के लिए ऋण गारंटी निधि ट्रस्ट',tollfree:'टोल-फ्री हेल्पलाइन',login:'सदस्य लॉगिन',announce:'विशेष घोषणाएँ',heroEyebrow:'भारत के सूक्ष्म एवं लघु उद्यमों के लिए ऋण गारंटी',heroL1:'एमएसएमई को सशक्त बनाना।',heroL2:'भारत की प्रगति को सुदृढ़ करना।',heroLede:'पूरे भारत में पात्र सूक्ष्म एवं लघु उद्यमों के लिए ऋण गारंटी सहायता के माध्यम से संस्थागत ऋण तक पहुँच।',ctaSchemes:'हमारी योजनाएँ देखें',ctaHow:'यह कैसे काम करता है',hlEyebrow:'मुख्य आकर्षण',hlTitle:'हाल की उपलब्धियाँ और पहल',aboutEyebrow:'सीजीटीएमएसई के बारे में',aboutTitle:'सपनों को साकार करना। उद्यमों का सहयोग।',ctaDiscover:'सीजीटीएमएसई को जानें',howEyebrow:'योजना को समझें',howTitle:'सीजीटीएमएसई गारंटी कैसे काम करती है',ctaGuidelines:'योजना दिशानिर्देश देखें',schemesEyebrow:'योजनाएँ एवं प्रमुख लाभ',schemesTitle:'सीजीटीएमएसई द्वारा संचालित गारंटी योजनाएँ',benefitEyebrow:'किसे लाभ मिल सकता है',benefitTitle:'लघु उद्यम के इर्द-गिर्द बना पारिस्थितिकी तंत्र',impactEyebrow:'हमारा प्रभाव',impactTitle:'ऋण तक पहुँच बढ़ाने के पच्चीस वर्ष',newsEyebrow:'नवीनतम समाचार एवं घोषणाएँ',newsTitle:'परिपत्र एवं योजना अपडेट',resEyebrow:'संसाधन एवं त्वरित पहुँच',resTitle:'आपकी ज़रूरत की हर चीज़, एक क्लिक पर',mediaEyebrow:'वीडियो',mediaTitle:'सीजीटीएमएसई पर ऋणदात्री संस्थाओं के प्रमुख',ctaEyebrow:'शुरुआत करें',ctaTitle:'साथ मिलकर, एक सशक्त एमएसएमई भारत का निर्माण।',ctaExplore:'सीजीटीएमएसई को जानें',ctaContact:'संपर्क करें'};
+  const EN={};
+  document.querySelectorAll('[data-i18n]').forEach(el=>EN[el.dataset.i18n]=el.innerHTML);
+  function setLang(l){
+    document.documentElement.lang=l==='hi'?'hi':'en';
+    document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;el.innerHTML=l==='hi'&&HIT[k]?HIT[k]:EN[k]});
+    document.querySelectorAll('[data-nav]').forEach(el=>{const n=NAV.find(x=>x.key===el.dataset.nav);const inDrawer=!!el.closest('#drawerNav');el.textContent=l==='hi'?HI[n.key]:(inDrawer?n.label:(n.short||n.label))});
+    document.querySelectorAll('.langbtn').forEach(b=>b.setAttribute('aria-pressed',b.dataset.lang===l));
+    try{localStorage.setItem('cg-lang',l)}catch(e){}
+  }
+  document.querySelectorAll('.langbtn').forEach(b=>b.addEventListener('click',()=>setLang(b.dataset.lang)));
+  try{if(localStorage.getItem('cg-lang')==='hi')setLang('hi')}catch(e){}
+
+  /* ---------- Ticker pause ---------- */
+  const ticker=document.getElementById('ticker'),tp=document.getElementById('tickerPause');
+  if(reduce)ticker.classList.add('paused');
+  tp.addEventListener('click',()=>{const p=ticker.classList.toggle('paused');tp.setAttribute('aria-pressed',p);tp.setAttribute('aria-label',p?'Play announcements':'Pause announcements');tp.querySelector('use').setAttribute('href',p?'#i-play':'#i-pause')});
+
+  /* ---------- Highlights carousel (official CGTMSE banners) ---------- */
+  const SLIDES=[
+    {src:'assets/b4.webp',alt:'Commemorative postage stamp celebrating 25 years of CGTMSE unveiled on stage',cap:'<b>25 years of CGTMSE.</b> A commemorative postage stamp celebrating the Trust\'s role in MSE empowerment.',link:CG+'/galleryphotos'},
+    {src:'assets/b2.webp',alt:'Special Credit Guarantee Scheme banner: Collateral Support for Export Credit under the Export Promotion Mission',cap:'<b>Collateral Support for Export Credit.</b> Special credit guarantee scheme for MSME exporters under the Export Promotion Mission.',link:CG+'/Default/ViewFile/?id=1770397812214_Circular%20257%20-%20CGS%20for%20Export%20credit%20merged.pdf&path=Circular'},
+    {src:'assets/b6.webp',alt:'How to apply for Collateral Support for Export Credit through the DGFT portal in six steps',cap:'<b>Applying for export credit support.</b> Exporters apply for a UIN through the DGFT portal in six steps.',link:CG+'/Default/ViewFile/?id=1770397812214_Circular%20257%20-%20CGS%20for%20Export%20credit%20merged.pdf&path=Circular'},
+    {src:'assets/b3.webp',alt:'CGTMSE and Delhi Government officials signing an MoU for enhanced credit guarantee for MSEs in Delhi',cap:'<b>CGTMSE and the Delhi Government sign an MoU</b> for enhanced credit guarantee support to MSEs in Delhi.',link:CG+'/Default/ViewFile/?id=1774432973114_Delhi%20Circular%20no%20260.pdf&path=Circular'},
+    {src:'assets/b1.webp',alt:'CGTMSE receiving an award at a Chamber of Indian Micro Small and Medium Enterprises event',cap:'<b>Recognition from industry.</b> CGTMSE honoured at an event of the Chamber of Indian Micro, Small and Medium Enterprises.',link:CG+'/galleryphotos'},
+    {src:'assets/b5.webp',alt:'Dignitaries holding commemorative frames on stage at a CGTMSE event',cap:'<b>Celebrating MSE empowerment.</b> Dignitaries at the CGTMSE 25-year commemoration.',link:CG+'/galleryphotos'}
+  ];
+  const slidesEl=document.getElementById('slides'),dots=document.getElementById('dots'),capEl=document.getElementById('slideCaption'),playBtn=document.getElementById('playSlide');
+  slidesEl.innerHTML=SLIDES.map((s,i)=>`<a class="slide${i===0?' active':''}" href="${s.link}" target="_blank" rel="noopener" role="group" aria-roledescription="slide" aria-label="${i+1} of ${SLIDES.length}" ${i?'aria-hidden="true" tabindex="-1"':''}><img src="${s.src}" width="1400" height="563" alt="${s.alt}" ${i?'loading="lazy"':''} decoding="async"></a>`).join('');
+  dots.innerHTML=SLIDES.map((s,i)=>`<button type="button" aria-label="Show slide ${i+1}" ${i===0?'aria-current="true"':''}></button>`).join('');
+  let cur=0,timer=null,playing=!reduce;
+  function show(i){
+    cur=(i+SLIDES.length)%SLIDES.length;
+    [...slidesEl.children].forEach((s,j)=>{s.classList.toggle('active',j===cur);s.setAttribute('aria-hidden',j!==cur);s.tabIndex=j===cur?0:-1});
+    [...dots.children].forEach((d,j)=>d.toggleAttribute('aria-current',j===cur));
+    capEl.innerHTML=SLIDES[cur].cap;
+  }
+  function tick(){clearInterval(timer);if(playing)timer=setInterval(()=>show(cur+1),6500)}
+  function setPlaying(p){playing=p;playBtn.setAttribute('aria-label',p?'Pause slideshow':'Play slideshow');playBtn.querySelector('use').setAttribute('href',p?'#i-pause':'#i-play');tick()}
+  document.getElementById('prevSlide').addEventListener('click',()=>{show(cur-1);tick()});
+  document.getElementById('nextSlide').addEventListener('click',()=>{show(cur+1);tick()});
+  dots.addEventListener('click',e=>{const b=e.target.closest('button');if(b){show([...dots.children].indexOf(b));tick()}});
+  playBtn.addEventListener('click',()=>setPlaying(!playing));
+  const car=document.getElementById('carousel');
+  car.addEventListener('mouseenter',()=>clearInterval(timer));car.addEventListener('mouseleave',tick);
+  car.addEventListener('focusin',()=>clearInterval(timer));car.addEventListener('focusout',tick);
+  car.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'){show(cur-1)}if(e.key==='ArrowRight'){show(cur+1)}});
+  let sx=null;slidesEl.addEventListener('touchstart',e=>sx=e.touches[0].clientX,{passive:true});
+  slidesEl.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){show(cur+(dx<0?1:-1));tick()}sx=null});
+  show(0);setPlaying(playing);
+
+  /* ---------- Count-up statistics (final values are in the HTML) ---------- */
+  const counts=[...document.querySelectorAll('.count')];
+  const fmt=(v,d)=>v.toLocaleString('en-IN',{minimumFractionDigits:d,maximumFractionDigits:d});
+  function countUp(el){const to=+el.dataset.to,d=+el.dataset.dec,t0=performance.now(),dur=1400;
+    (function f(t){const p=Math.min(1,(t-t0)/dur),e=1-Math.pow(1-p,3);el.textContent=fmt(to*e,d);if(p<1)requestAnimationFrame(f);else el.textContent=fmt(to,d)})(t0)}
+
+  /* ---------- Reveal on scroll (only for content below the first screen) ---------- */
+  if('IntersectionObserver' in window && !reduce){
+    const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){const el=en.target;
+      if(el.classList.contains('stats-card')){counts.forEach(countUp)}
+      else{el.classList.add('reveal-in');el.classList.remove('pre')}
+      io.unobserve(el)}}),{rootMargin:'0px 0px -8% 0px'});
+    const vh=window.innerHeight;
+    document.querySelectorAll('.section-head,.about-media,.about-copy,.parties,.step,.scheme,.bcard,.tcard,.timeline li,.news-feature,.nitem,.res,.video,.cta-photo').forEach((el,i)=>{
+      if(el.getBoundingClientRect().top>vh){el.classList.add('pre');el.style.transitionDelay=((i%4)*60)+'ms';io.observe(el)}
+    });
+    io.observe(document.querySelector('.stats-card'));
+    setTimeout(()=>document.querySelectorAll('.pre').forEach(el=>{if(el.getBoundingClientRect().top<window.innerHeight){el.classList.add('reveal-in');el.classList.remove('pre')}}),2500);
+  }
+})();
+</script>
+</body>
+</html>
